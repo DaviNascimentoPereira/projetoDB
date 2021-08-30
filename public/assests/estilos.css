@@ -1,0 +1,91 @@
+
+        a:link {
+            text-decoration: none;
+            color: blue !important;
+        }
+
+        a {
+            color: #000;
+        }
+
+        .navbar {
+            background: #f47f04;
+            border-color: #000 !important;
+
+            /* background-image: linear-gradient(150deg, #98FB98 25%, #66cdaa 50%, #228B22 75% ,#006400 100%); */
+        }
+
+        .menuPrincipal {
+            background: #000 !important;
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .nav-link2 {
+            color: #000 !important;
+        }
+
+        .nav-link:link:hover {
+            box-shadow: inset 0 0 1em #f47f04 !important;
+        }
+
+        .nav-link:link:active {
+            box-shadow: inset 0 0 1em red !important;
+        }
+
+        .footer {
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background: #f47f04;
+            color: #000;
+            text-align: center;
+        }
+
+        .corpo {
+            background: #FFFFF0;
+        }
+
+        .carousel {
+            width: 100% !important;
+            height: 80% !important;
+            padding: 10px;
+        }
+
+        .botao {
+            color: #FFFFF0 !important;
+            background-color: #000 !important;
+            border-color: #000 !important;
+        }
+
+        img {
+            width: 250px;
+        }
+
+        .buscar {
+            color: #FFFFF0 !important;
+            border-color: #000 !important;
+            background: #000 !important;
+        }
+
+        .buscar:hover {
+            box-shadow: inset 0 0 1em #f47f04;
+        }
+
+        .botao:hover {
+            box-shadow: inset 0 0 1em #f47f04 !important;
+        }
+
+        .botao:active {
+            box-shadow: inset 0 0 1em red !important;
+        }
+
+        .imgUser {
+            width: 50px;
+            height: 50px;
+            padding-right: 10px;
+        }
+    
