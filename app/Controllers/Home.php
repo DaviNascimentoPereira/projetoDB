@@ -7,16 +7,16 @@ class Home extends BaseController
     public function index()
     {
 
-        echo view('header');
+        echo view('templete/header');
         echo view('conteudo');
-        echo view('footer');
+        echo view('templete/footer');
     }
 
     public function catalogo()
     {
         
-        echo view('header');
+        echo view('templete/header');
         echo view('catalogo');
-        echo view('footer');
+        echo view('templete/footer');
     }
 }

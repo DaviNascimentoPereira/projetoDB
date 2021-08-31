@@ -11,10 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <!-- folha de estilos interno -->
-    <link rel="stylesheet" type="text/css" href="assests/estilos.css">
+    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>assests/estilos.css">
     <!-- javascript interno -->
-    <script type="text/javascript" src="assests/javascript.js"></script>
-</head> 
+    <script type="text/javascript" src="<?php base_url('')?>assests/javascript.js"></script>
+</head>
 
 <header id="t3-header">
     <div class="container">
@@ -35,7 +35,7 @@
                             <a accesskey="4" href="javascript:void(0);" class="anchor acess" title="contraste" onclick="contraste();" id="contrasteLink">
                                 alto contraste <span>4</span>
                             </a>
-                            <a accesskey="5" href="<?= base_url('acessibilidade'); ?>" class="anchor acess " title="acessibilidade">
+                            <a accesskey="5" href="#" class="anchor acess " title="acessibilidade">
                                 acessibilidade <span>5</span>
                             </a>
                         </div>
@@ -57,18 +57,16 @@
                     <script>
                         new window.VLibras.Widget('https://vlibras.gov.br/app');
                     </script>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg" id="menuanchor">
     <div class="container-fluid">
-        <div class="col-3"><a class="navbar-brand" href="index"><img src="images/logo2.png" alt=""></a></div>
-        <div class="col-3"><a class="navbar-brand" href="#"><img src="images/avatar.gif" class="imgUser" alt="">Faça login ou cadastre-se</a></div>
-        <div class="col-3"><a class="navbar-brand" href="#"><img src="images/carrinho.png" class="imgUser" alt=""></a></div>
+        <div class="col-3"><a class="navbar-brand" href="<?php base_url('')?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a></div>
         <div class="col-3">
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -85,30 +83,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="catalogo"><span>Arte, Desenho &
+                    <a class="nav-link" aria-current="page" href="<?php base_url()?>catalogo"><span>Arte, Desenho &
                             Pintura</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Papéis & Blocos</span></a>
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Papéis & Blocos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Pastas, Bolsas &
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Pastas, Bolsas &
                             Mochilas</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Escritório,
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Escritório,
                             Informática & Eletrônicos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo"><span>Escrita & Corretivos</span></a>
+                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Escrita & Corretivos</span></a>
                 </li>
 
             </ul>

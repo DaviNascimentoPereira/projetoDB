@@ -18,13 +18,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="images\tambPrincipal1.jpg" class="d-block w-100 img" alt="...">
+      <img src="<?php base_url()?>public/images/tambPrincipal1.jpg" class="d-block w-100 img" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="images\tambPrincipal2.jpg" class="d-block w-100 img" alt="...">
+      <img src="<?php base_url()?>public/images/tambPrincipal2.jpg" class="d-block w-100 img" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="images\tambPrincipal3.jpg" class="d-block w-100 img" alt="...">
+      <img src="<?php base_url()?>public/images/tambPrincipal3.jpg" class="d-block w-100 img" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#t3-content" data-bs-slide="prev">
@@ -40,7 +40,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -64,7 +64,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -80,7 +80,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img src="images\200.gif" class="card-img-top" alt="...">
+      <img src="<?php base_url()?>public/images\200.gif" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
