@@ -13,7 +13,7 @@
     <!-- folha de estilos interno -->
     <link rel="stylesheet" type="text/css" href="<?php base_url() ?>assests/estilos.css">
     <!-- javascript interno -->
-    <script type="text/javascript" src="<?php base_url('')?>assests/javascript.js"></script>
+    <script type="text/javascript" src="<?php base_url('') ?>assests/javascript.js"></script>
 </head>
 
 <header id="t3-header">
@@ -66,13 +66,13 @@
 
 <nav class="navbar navbar-expand-lg" id="menuanchor">
     <div class="container-fluid">
-        <div class="col-3"><a class="navbar-brand" href="<?php base_url('')?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a></div>
-        <div class="col-3">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn botao" type="submit">Buscar</button>
-            </form>
-        </div>
+        <a class="navbar-brand" href="<?php base_url('') ?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a>
+
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn botao" type="submit">Buscar</button>
+        </form>
+
     </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light menuPrincipal">
@@ -83,30 +83,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php base_url()?>catalogo"><span>Arte, Desenho &
+                    <a class="nav-link" aria-current="page" href="<?php base_url() ?>catalogo"><span>Arte, Desenho &
                             Pintura</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Papéis & Blocos</span></a>
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Papéis & Blocos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Pastas, Bolsas &
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Pastas, Bolsas &
                             Mochilas</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Escritório,
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Escritório,
                             Informática & Eletrônicos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url()?>catalogo"><span>Escrita & Corretivos</span></a>
+                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Escrita & Corretivos</span></a>
                 </li>
 
             </ul>
