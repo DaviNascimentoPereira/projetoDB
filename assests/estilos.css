@@ -1,20 +1,15 @@
 
         a:link {
             text-decoration: none;
-            color: blue !important;
         }
-
-        a {
-            color: #000;
-        }
-
+             
         .navbar {
             background: #f47f04;
             border-color: #000 !important;
 
             /* background-image: linear-gradient(150deg, #98FB98 25%, #66cdaa 50%, #228B22 75% ,#006400 100%); */
         }
-
+        
         .menuPrincipal {
             background: #000 !important;
         }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kalango</title>
-    <link rel="icon" type="image/ico" href="icon.ico" />
+    <link rel="icon" type="image/ico" href="<?php base_url('')?>public/icon.ico" />
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -65,14 +65,20 @@
 </header>
 
 <nav class="navbar navbar-expand-lg" id="menuanchor">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="<?php base_url('') ?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a>
+    <div class="row container-fluid">
+        <div class="col-12 col-md-3">
+            <a class="navbar-brand" href="<?php base_url('') ?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a>
+        </div>
 
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn botao" type="submit">Buscar</button>
-        </form>
-
+        <div class="col-12 col-md-6">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn botao" type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="col-12 col-md-3">
+            <a href="<?php base_url() ?>login">Faça login</a> ou <a href="<?php base_url() ?>cadastro">cadastre-se</a>
+        </div>
     </div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-light menuPrincipal">
