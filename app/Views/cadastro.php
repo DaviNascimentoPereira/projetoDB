@@ -7,7 +7,7 @@
             <form>
             <div class="form-group">
                     <label for="exampleInputEmail1">Nome:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu nome...">
+                    <input type="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu nome...">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email:</label>

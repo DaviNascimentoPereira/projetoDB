@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ClienteModel;
 class Inicio extends BaseController
 {
     public function index()
@@ -28,6 +29,10 @@ class Inicio extends BaseController
     }
 
     public function cadastro(){
+
+        helper(['form', 'url']);
+
+        $model = new ClienteModel();
 
 
         echo view('templete/header');
