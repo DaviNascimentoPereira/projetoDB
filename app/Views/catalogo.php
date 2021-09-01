@@ -1,5 +1,5 @@
 <main id="t3-content" style="min-height: 70vh;">
-    <div class="container">
+    <div class="container" style="margin-left: 75px;">
         <div class="row justify-content-md-center">
             <div class="card" style="width: 18rem;">
                 <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
