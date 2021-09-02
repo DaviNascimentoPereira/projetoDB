@@ -27,24 +27,47 @@ class Clientes extends BaseController
 
         if ($this->request->getMethod() == 'post') {
 
-            $clienteModel = new \App\Models\ClienteModel();
-            $clienteModel = new \App\Models\ClienteModel();
+            // $clienteModel = new \App\Models\ClienteModel();
+            // $clienteModel = new \App\Models\ClienteModel();
 
-            $clienteModel->set('nome', $this->request->getPost('nome'));
-            $clienteModel->set('email', $this->request->getPost('email'));
-            $clienteModel->set('senha', $this->request->getPost('senha'));
+            // $clienteModel->set('nome', $this->request->getPost('nome'));
+            // $clienteModel->set('email', $this->request->getPost('email'));
+            // $clienteModel->set('senha', $this->request->getPost('senha'));
 
 
 
-            if ($clienteModel->insert()) {
-                $data['msg'] = 'Cadastro efetuado';
-                return redirect()->to(base_url('login'));
+            // if ($clienteModel->insert()) {
+            //     $data['msg'] = 'Cadastro efetuado';
+            //     return redirect()->to(base_url('login'));
+            // } else {
+            //     $data['msg'] = 'Cadastro não efetuado';
+            // }
+
+            $rules = [
+                'nome' => 'required|min_length[3]|max_length[20]',
+                'email' => 'required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]',
+                'senha' => 'required|min_length[8]|max_length[255]',
+                'senha_confirmacao' => 'matches[senha]',
+
+            ];
+            if (!$this->validate($rules)) {
+                $data['validation'] = $this->validator;
             } else {
-                $data['msg'] = 'Cadastro não efetuado';
+                $clienteModel = new \App\Models\ClienteModel();
+                $newData = [
+                    'nome' => $this->request->getVar('nome'),
+                    'email' => $this->request->getVar('email'),
+                    'senha' => $this->request->getVar('senha'),
+                ];
+                if ($clienteModel->save($newData)) {
+                    $data['msg'] = 'Cadastro efetuado';
+                    return redirect()->to(base_url());
+                } else {
+                    echo "Erro ao salvar";
+                    exit;
+                }
             }
         }
-
-
 
 
 
