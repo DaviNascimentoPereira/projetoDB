@@ -1,25 +1,28 @@
 <main id="t3-content" style="min-height: 70vh;">
     <br>
-    
+
     <div class="row container justify-content-md-center">
-        <div class="col-12 col-md-3">
-        <h2> Faça seu cadastro</h2>
-            <form>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Nome:</label>
-                    <input type="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu nome...">
+        <div class="col-12 col-md-4">
+            <h2> <?php echo $titulo ?></h2>
+            <strong><?php if (isset($msg)) {
+                        echo $msg;
+                    } ?></strong>
+            <form method="post" name="formCad">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="tex" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" placeholder="Seu nome..." required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email...">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Seu email..." required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Senha:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha...">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha..." required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Repita a senha:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirme sua senha...">
+                    <label for="senha_confirmacao">Repita a senha:</label>
+                    <input type="password" class="form-control" name="senha_confirmacao" id="senha_confirmacao" placeholder="Confirme sua senha..." required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

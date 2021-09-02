@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kalango</title>
+    <title><?php echo $title ?></title>
     <link rel="icon" type="image/ico" href="<?php base_url('')?>public/icon.ico" />
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,7 +77,7 @@
             </form>
         </div>
         <div class="col-12 col-md-3">
-            <a href="<?php base_url() ?>login">Faça login</a> ou <a href="<?php base_url() ?>cadastro">cadastre-se</a>
+            <a href="<?php base_url('Clientes/') ?>login">Faça login</a> ou <a href="<?php base_url('Clientes/') ?>cadastro">cadastre-se</a>
         </div>
     </div>
 </nav>
@@ -93,26 +93,26 @@
                             Pintura</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Papéis & Blocos</span></a>
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Papéis & Blocos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Pastas, Bolsas &
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Pastas, Bolsas &
                             Mochilas</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Escritório,
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Escritório,
                             Informática & Eletrônicos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url() ?>catalogo"><span>Escrita & Corretivos</span></a>
+                    <a class="nav-link" href="<?php base_url('Produtos/')?>catalogo"><span>Escrita & Corretivos</span></a>
                 </li>
 
             </ul>

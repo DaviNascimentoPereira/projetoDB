@@ -37,9 +37,16 @@ $routes->setAutoRoute(true);
 
 
 $routes->match(['get','post'],'/inicio', 'Inicio::index');
-$routes->match(['get','post'],'/catalogo', 'Inicio::catalogo');
-$routes->match(['get','post'],'/login', 'Inicio::login');
-$routes->match(['get','post'],'/cadastro', 'Inicio::cadastro');
+
+
+
+$routes->match(['get','post'],'/catalogo', 'Produtos::index');
+// $routes->match(['get','post'],'/catalogo/(:num)', 'Produtos::visualizarProduto/$1');
+
+
+$routes->match(['get','post'],'/login', 'Clientes::index');
+$routes->match(['get','post'],'/cadastro', 'Clientes::cadastroUsuario');
+
 
 /*
  * --------------------------------------------------------------------
