@@ -28,7 +28,7 @@ class Clientes extends BaseController
         if ($this->request->getMethod() == 'post') {
 
             // $clienteModel = new \App\Models\ClienteModel();
-            // $clienteModel = new \App\Models\ClienteModel();
+            
 
             // $clienteModel->set('nome', $this->request->getPost('nome'));
             // $clienteModel->set('email', $this->request->getPost('email'));
@@ -48,12 +48,11 @@ class Clientes extends BaseController
                 'email' => 'required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]',
                 'senha' => 'required|min_length[8]|max_length[255]',
                 'senha_confirmacao' => 'matches[senha]',
-
             ];
             if (!$this->validate($rules)) {
                 $data['validation'] = $this->validator;
             } else {
-                $clienteModel = new \App\Models\ClienteModel();
+                $clienteModel = new \App\Models\UserModel();
                 $newData = [
                     'nome' => $this->request->getVar('nome'),
                     'email' => $this->request->getVar('email'),

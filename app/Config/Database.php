@@ -50,6 +50,27 @@ class Database extends Config
         'port'     => 3306,
     ];
 
+    // public $default = [
+	// 	'DSN'      => '',
+	// 	'hostname' => '127.0.0.1',
+	// 	'username' => '',
+	// 	'password' => '',
+	// 	'database' => ':memory:',
+	// 	'DBDriver' => 'SQLite3',
+	// 	'DBPrefix' => '',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+	// 	'pConnect' => false,
+	// 	'DBDebug'  => (ENVIRONMENT !== 'production'),
+	// 	'cacheOn'  => false,
+	// 	'cacheDir' => '',
+	// 	'charset'  => 'utf8',
+	// 	'DBCollat' => 'utf8_general_ci',
+	// 	'swapPre'  => '',
+	// 	'encrypt'  => false,
+	// 	'compress' => false,
+	// 	'strictOn' => false,
+	// 	'failover' => [],
+	// 	'port'     => 3306,		
+	// ];
     /**
      * This database connection is used when
      * running PHPUnit database tests.
