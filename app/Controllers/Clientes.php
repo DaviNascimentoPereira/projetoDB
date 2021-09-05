@@ -50,7 +50,7 @@ class Clientes extends BaseController
                 'senha_confirmacao' => 'matches[senha]',
             ];
             if (!$this->validate($rules)) {
-                $data['validation'] = $this->validator;
+                $data['validation'] = $this->rules;
             } else {
                 $clienteModel = new \App\Models\UserModel();
                 $newData = [
