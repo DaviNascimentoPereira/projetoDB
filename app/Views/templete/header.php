@@ -66,7 +66,7 @@
 
 <nav class="navbar navbar-expand-lg" id="menuanchor">
     <div class="row container-fluid">
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 col-sm-12 col-xs-12">
             <a class="navbar-brand" href="<?php base_url('') ?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a>
         </div>
 
@@ -76,7 +76,7 @@
                 <button class="btn btn botao" type="submit">Buscar</button>
             </form>
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 col-sm-12 col-xs-12">
             <a href="<?php base_url('Clientes/') ?>login">Faça login</a> ou <a href="<?php base_url('Clientes/') ?>cadastro">cadastre-se</a>
         </div>
     </div>
