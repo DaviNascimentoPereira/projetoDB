@@ -4,13 +4,20 @@
     <div class="row container justify-content-md-center">
         <div class="col-12 col-md-4">
             <h2> <?php echo $titulo ?></h2>
-            <strong><?php if (isset($msg)) {
-                        echo $msg;
-                    } ?></strong>
+            <?php if($erros != ''){ ?>
+                <ul>
+                    <?php 
+                    foreach ($erros as $erro) {?>
+                        <li><?php echo $erro ?></li>
+                        <?php } ?>
+                   <? ?>
+                </ul>
+           <?php } ?>
+            <strong><?php if (isset($msg)) {echo $msg;} ?></strong>
             <form method="post" name="formCad">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="tex" class="form-control" name="nome" id="nome" aria-describedby="emailHelp" placeholder="Seu nome..." required>
+                    <input type="tex" class="form-control"  name="nome" id="nome" aria-describedby="emailHelp" placeholder="Seu nome..." required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>

@@ -22,49 +22,27 @@ class Clientes extends BaseController
 
         $data['title'] = "Kalango - Cadastro";
         $data['titulo'] = "Cadastro de Usuario";
-
+        $data['erros'] = '';
         helper(['form', 'url']);
 
         if ($this->request->getMethod() == 'post') {
 
-            // $clienteModel = new \App\Models\ClienteModel();
-            
+            $clienteModel = new \App\Models\ClienteModel();
 
-            // $clienteModel->set('nome', $this->request->getPost('nome'));
-            // $clienteModel->set('email', $this->request->getPost('email'));
-            // $clienteModel->set('senha', $this->request->getPost('senha'));
-
-
-
-            // if ($clienteModel->insert()) {
-            //     $data['msg'] = 'Cadastro efetuado';
-            //     return redirect()->to(base_url('login'));
-            // } else {
-            //     $data['msg'] = 'Cadastro não efetuado';
-            // }
-
-            $rules = [
-                'nome' => 'required|min_length[3]|max_length[20]',
-                'email' => 'required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]',
-                'senha' => 'required|min_length[8]|max_length[255]',
-                'senha_confirmacao' => 'matches[senha]',
+            $dados = [
+                'nome' => $this->request->getPost('nome'),
+                'email' => $this->request->getPost('email'),
+                'senha' => $this->request->getPost('senha'),
+                'senha_confirmacao' => $this->request->getPost('senha_confirmacao'),
             ];
-            if (!$this->validate($rules)) {
-                $data['validation'] = $this->rules;
+            // var_dump($dados);exit;
+            
+            if ($clienteModel->save($dados)) {
+                $data['msg'] = 'Cadastro efetuado';
+               return redirect()->to(base_url('cadastro'));
             } else {
-                $clienteModel = new \App\Models\UserModel();
-                $newData = [
-                    'nome' => $this->request->getVar('nome'),
-                    'email' => $this->request->getVar('email'),
-                    'senha' => $this->request->getVar('senha'),
-                ];
-                if ($clienteModel->save($newData)) {
-                    $data['msg'] = 'Cadastro efetuado';
-                    return redirect()->to(base_url());
-                } else {
-                    echo "Erro ao salvar";
-                    exit;
-                }
+                $data['msg'] = 'Cadastro não efetuado';
+                $data['erros'] = $clienteModel->errors();
             }
         }
 

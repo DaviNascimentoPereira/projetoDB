@@ -11,15 +11,34 @@ class ClienteModel extends Model
     protected $returnType           = 'array';
     protected $allowedFields        = ['idCliente', 'nome', 'email', 'senha'];
     protected $createdField         = 'created_at';
-
-    // protected $useAutoIncrement     = true;
+    protected $validationRules      = [
+        'nome'              => 'required|alpha_numeric_space|min_length[3]',
+        'email'             => 'required|valid_email|is_unique[cad_clientes.email]',
+        'senha'             => 'required|min_length[6]',
+        'senha_confirmacao' => 'required|matches[senha]',
+    ];
+    protected $validationMessages = [
+        'nome'        => [
+            'min_length' => 'Campo nome precisa ter no minimo 3 letras.',
+        ],
+        'email'        => [
+            'is_unique' => 'Esse email já está sendo utilizado.',
+        ],
+        'senha'        => [
+            'min_length' => 'Senha deve ter pelo menos 6 caracteres.',
+        ],
+        'senha_confirmacao'  => [
+            'matches' => 'As senhas não estão diferentes.',
+        ],
+    ];
+     protected $useAutoIncrement     = true;
     // protected $insertID             = 0;
     // protected $useSoftDeletes       = true;
     // protected $useTimestamps        = false;
     // protected $updatedField         = 'updated_at';
     // protected $deletedField         = 'deleted_at';
-    // protected $validationRules      = [];
-    // protected $validationMessages   = [];
+     
+     
     // protected $skipValidation       = false;
 
 

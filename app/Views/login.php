@@ -1,4 +1,4 @@
-<main id="t3-content" style="min-height: 70vh;">
+<main id="t3-content" style="min-height: 70vh; background-image: url(img/fundo.jpg) !important;">
     <br>
     <div class="row container justify-content-md-center">
         <div class="col-12 col-md-3">
