@@ -5,10 +5,12 @@
         <div class="col-12 col-md-4">
             <h2> <?php echo $titulo ?></h2>
             <?php if($erros != ''){ ?>
-                <ul>
+                <ul style="list-style: none;">
                     <?php 
                     foreach ($erros as $erro) {?>
+                    <div class="alert alert-warning" role="alert">
                         <li><?php echo $erro ?></li>
+                    </div>
                         <?php } ?>
                    <? ?>
                 </ul>
