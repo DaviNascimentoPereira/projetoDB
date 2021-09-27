@@ -29,10 +29,10 @@
                     <label for="senha">Senha:</label>
                     <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha..." required>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="senha_confirmacao">Repita a senha:</label>
                     <input type="password" class="form-control" name="senha_confirmacao" id="senha_confirmacao" placeholder="Confirme sua senha..." required>
-                </div>
+                </div> -->
                 <br>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>

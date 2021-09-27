@@ -15,7 +15,7 @@ class ClienteModel extends Model
         'nome'              => 'required|alpha_numeric_space|min_length[3]',
         'email'             => 'required|valid_email|is_unique[cad_clientes.email]',
         'senha'             => 'required|min_length[6]',
-        'senha_confirmacao' => 'required|matches[senha]',
+        // 'senha_confirmacao' => 'required|matches[senha]',
     ];
     protected $validationMessages = [
         'nome'        => [
@@ -28,7 +28,7 @@ class ClienteModel extends Model
             'min_length' => 'Senha deve ter pelo menos 6 caracteres.',
         ],
         'senha_confirmacao'  => [
-            'matches' => 'As senhas não estão diferentes.',
+            'matches' => 'As senhas estão diferentes.',
         ],
     ];
      protected $useAutoIncrement     = true;
@@ -43,9 +43,10 @@ class ClienteModel extends Model
 
 
 
+public function verificaEmail(string $email) : array {
+        $rq = $this->where('email', $email) -> first();
 
-    
-
-
+        return !is_null($rq) ? $rq : []; 
+    }
 
 }

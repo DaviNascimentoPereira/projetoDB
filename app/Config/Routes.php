@@ -36,7 +36,7 @@ $routes->get('/', 'Inicio::index');
 
 $routes->match(['get','post'],'/catalogo', 'Produtos::index');
 
-$routes->match(['get','post'],'/login', 'Clientes::index');
+$routes->match(['get','post'],'/login', 'Login::index');
 
 $routes->match(['get','post'],'/cadastro', 'Clientes::cadastroUsuario');
 
