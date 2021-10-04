@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ClienteModel;
 
-class Login extends BaseController
+class LoginAdm extends BaseController
 {
 	public function index()
 	{
@@ -13,7 +13,7 @@ class Login extends BaseController
 		$data['titulo'] = "Faça seu login";
 
 		echo view('templete/header', $data);
-		echo view('pageLogin');
+		echo view('pageLoginAdm');
 		echo view('templete/footer');
 	}
 
@@ -26,16 +26,10 @@ class Login extends BaseController
 		$usuarioModel = new ClienteModel();
 		$dadosUsuario = $usuarioModel->verificaEmail($email);
 
-		// var_dump($email);
-		// var_dump($senha);
-		// var_dump($dadosUsuario);
 
 		if (count($dadosUsuario) > 0) {
 			$hashUsuario = $dadosUsuario['senha'];
-			// var_dump($dadosUsuario['senha']);
-			// var_dump($hashUsuario);
-			// var_dump($dadosUsuario['senha']==$hashUsuario);exit;
-			// if (password_verify($senha, $hashUsuario)) {,
+
 
 			if ($dadosUsuario['senha'] == $hashUsuario) {
 				session()->set('isLoggedIn', true);
