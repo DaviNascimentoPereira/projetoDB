@@ -16,7 +16,6 @@ class Clientes extends BaseController
 
     public function cadastroUsuario()
     {
-
         $data['title'] = "Kalango - Cadastro";
         $data['titulo'] = "Cadastro de Usuario";
         $data['erros'] = '';

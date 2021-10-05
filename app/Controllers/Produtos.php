@@ -21,7 +21,7 @@ class Produtos extends BaseController
         $data['title'] = "Kalango - Cadastro de Produtos";
 
         echo view('templete/header', $data);
-        echo view('catalogo');
+        echo view('cad');
         echo view('templete/footer');
     }
 }

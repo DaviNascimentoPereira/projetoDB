@@ -5,7 +5,7 @@ class Painel extends BaseController
 	public function index()
 	{
 		$data['title'] = "Kalango - Login";
-		$data['titulo'] = "Painel de Manutenção";
+		$data['titulo'] = "Painel de Manutenção - Produtos";
 
         
 
