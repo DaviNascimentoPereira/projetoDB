@@ -23,59 +23,66 @@
     <br>
     <div class="container">
         <div class="row justify-content-md-center">
-            <!-- <div class="col-12 col-md-3">
-            <img src="<?php base_url() ?>public/images/engrenagem.jpg" alt="">
-        </div> -->
-            <!-- <div class="col-3 nav">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Promoções</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Vá para o site</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
-                </li>
 
-            </ul>
-        </div> -->
-            <div class="col-12 col-md-6 table">
+
+
+            <div class="col-6">
                 <h2> <?php echo $titulo ?></h2>
-                <a href="#">Novo</a>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID produto</th>
-                            <th scope="col">Nome do produto</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Preço</th>
-                            <th scope="col">Acão</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><a href="#">Editar</a> / <a href="#">Excluir</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form class="form-signin" method="post" id="file" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nomeProduto">Nome do produto:</label>
+                        <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="precoProduto">Preço do produto:</label>
+                        <input type="text" class="form-control" name="precoProduto" id="precoProduto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select class="form-control" name="categoria" id="categoria" required>
+                            <option selected disabled>categoria</option>
+                            <option value="1">Categoria 1</option>
+                            <option value="2">Categoria 2</option>
+                            <option value="3">Categoria 3</option>
+                            <option value="4">Categoria 4</option>
+                            <option value="5">Categoria 5</option>
+                            <option value="6">Categoria 6</option>
+                            <option value="7">Categoria 7</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricaoProduto">Descrição do produto:</label>
+                        <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="file"></label>
+                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="image/*" readonly="true" required autofocus>
+                            <!-- <img id="blah" alt="imagem" /> -->
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
             </div>
+
+
         </div>
-        <?php $msg = session()->getFlashData('msg') ?>
-        <?php if (!empty($msg)) { ?>
-            <div class="col-12 col-md-3 alert alert-danger">
-                <?php echo $msg ?>
-            <?php } ?>
-            </div>
     </div>
 </main>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

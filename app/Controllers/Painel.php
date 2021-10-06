@@ -9,9 +9,9 @@ class Painel extends BaseController
 
         
 
-		echo view('PainelAdm/header', $data);
+		echo view('PainelAdm/templetePainel/header', $data);
 		echo view('PainelAdm/painel', $data);
-		echo view('PainelAdm/footer');
+		echo view('PainelAdm/templetePainel/footer');
 	}
 
 	//--------------------------------------------------------------------

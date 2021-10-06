@@ -35,10 +35,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Inicio::index');
 
 $routes->match(['get','post'],'/catalogo', 'Produtos::index');
+$routes->match(['get','post'],'/cadastroProdutos', 'Produtos::cadastroProduto');
 
 $routes->match(['get','post'],'/login', 'Login::index');
 
 $routes->match(['get','post'],'/cadastro', 'Clientes::cadastroUsuario');
+
+$routes->match(['get','post'],'/administracao', 'Painel::index');
+
+
+
+
 
 /*
  * --------------------------------------------------------------------

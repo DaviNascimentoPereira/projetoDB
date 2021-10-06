@@ -23,29 +23,6 @@
     <br>
     <div class="container">
         <div class="row justify-content-md-center">
-            <!-- <div class="col-12 col-md-3">
-            <img src="<?php base_url() ?>public/images/engrenagem.jpg" alt="">
-        </div> -->
-            <!-- <div class="col-3 nav">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Promoções</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Usuários</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Vá para o site</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
-                </li>
-
-            </ul>
-        </div> -->
             <div class="col-12 col-md-6 table">
                 <h2> <?php echo $titulo ?></h2>
                 <a href="#">Novo</a>
