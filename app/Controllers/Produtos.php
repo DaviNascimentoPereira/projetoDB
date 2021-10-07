@@ -21,7 +21,7 @@ class Produtos extends BaseController
 
 
         $data['title'] = "Kalango - Cadastro de Produtos";
-		$data['titulo'] = "Cadastro de Produtos";
+        $data['titulo'] = "Cadastro de Produtos";
 
         helper(['form', 'url']);
 
@@ -37,13 +37,13 @@ class Produtos extends BaseController
                 'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                 'imagem' => $uploadImagem,
             ];
-            
-            
-           
+
+
+
 
             if ($produtoModel->save($dados)) {
                 $data['msg'] = 'Produto cadastrado com sucesso!!!!';
-               return redirect()->to(base_url('administracao'));
+                return redirect()->to(base_url('administracao'));
             } else {
                 $data['msg'] = 'Produto não cadastrado';
                 $data['erros'] = $produtoModel->errors();
@@ -64,5 +64,20 @@ class Produtos extends BaseController
         } else {
             return false;
         }
+    }
+
+
+    public function editarProduto()
+    {
+        $data['title'] = "Kalango - Cadastro de Produtos";
+        $data['titulo'] = "Cadastro de Produtos";
+
+        helper(['form', 'url']);
+
+        
+
+        echo view('PainelAdm/templetePainel/header', $data);
+        echo view('PainelAdm/cadProdutos', $data);
+        echo view('PainelAdm/templetePainel/footer');
     }
 }

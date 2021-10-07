@@ -21,11 +21,13 @@
         }
     </style>
     <br>
+
+ 
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6 table">
                 <h2> <?php echo $titulo ?></h2>
-                <a href="#">Novo</a>
+                <a href="<?php base_url('Painel/') ?>cadastroProdutos">Novo</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -37,13 +39,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <?php
+                        foreach ($dados as $key => $dado) {  
+                        $htm = '<tr>';
+                        $htm .= '<td>'.$dado['idProduto'].'</td>'; 
+                        $htm .= '<td>'.$dado['nomeProduto'].'</td>';
+                        $htm .= '<td>'.$dado['categoria'].'</td>'; 
+                        $htm .= '<td>'.$dado['precoProduto'].'</td>'; 
+                        $htm .= '<td><a href="#">Editar</a> / <a href="#">Excluir</a></td>';
+                        $htm .= '</tr>';
+
+                        echo $htm;
+                         } 
+                         
+                          ?>
+                        
+                        
+                        <!-- <tr>
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
                             <td><a href="#">Editar</a> / <a href="#">Excluir</a></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
