@@ -8,6 +8,13 @@ class Inicio extends BaseController{
 
         $data['title'] = "Kalango";
         
+        $produtoModel = new \App\Models\ProdutosModel();
+
+        $data = [
+			'title' => 'Kalango - Administração',
+			'dados' => $produtoModel->findAll(),
+		];
+
         echo view('templete/header', $data);
         echo view('conteudo');
         echo view('templete/footer');
