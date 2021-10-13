@@ -18,18 +18,12 @@ class Produtos extends BaseController
 
     public function cadastroProduto()
     {
-
-
         $data['title'] = "Kalango - Cadastro de Produtos";
         $data['titulo'] = "Cadastro de Produtos";
-
         helper(['form', 'url']);
-
         if ($this->request->getMethod() == 'post') {
-
             $produtoModel = new \App\Models\ProdutosModel();
             $uploadImagem = $this->upload_image($this->request->getFile('profile_image'));
-
             $dados = [
                 'nomeProduto' => $this->request->getPost('nomeProduto'),
                 'precoProduto' => $this->request->getPost('precoProduto'),
@@ -37,10 +31,6 @@ class Produtos extends BaseController
                 'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                 'imagem' => $uploadImagem,
             ];
-
-
-
-
             if ($produtoModel->save($dados)) {
                 $data['msg'] = 'Produto cadastrado com sucesso!!!!';
                 return redirect()->to(base_url('administracao'));
@@ -49,7 +39,6 @@ class Produtos extends BaseController
                 $data['erros'] = $produtoModel->errors();
             }
         }
-
         echo view('PainelAdm/templetePainel/header', $data);
         echo view('PainelAdm/cadProdutos', $data);
         echo view('PainelAdm/templetePainel/footer');
@@ -66,7 +55,6 @@ class Produtos extends BaseController
         }
     }
 
-
     public function editarProduto()
     {
         $data['title'] = "Kalango - Cadastro de Produtos";
@@ -74,10 +62,30 @@ class Produtos extends BaseController
 
         helper(['form', 'url']);
 
-        
+
 
         echo view('PainelAdm/templetePainel/header', $data);
         echo view('PainelAdm/cadProdutos', $data);
         echo view('PainelAdm/templetePainel/footer');
+    }
+
+    public function visualizarProduto($idProduto = null)
+    {
+        $uri = current_url(true);
+        $idProduto = $uri->getSegment(3);
+        $produtoModel = new \App\Models\ProdutosModel();
+        // $data['dados'] = $produtoModel->pegarProdutos($id);
+
+        $data = [
+            'title' => 'Kalango',
+            'titulo' => 'Produtos',
+            'dados' => $produtoModel->pegarProdutos($idProduto),
+        ];
+        var_dump($data['dados'] = $produtoModel->pegarProdutos($idProduto));
+        exit;
+
+        echo view('templete/header', $data);
+        // echo view('produto') ;
+        echo view('templete/footer');
     }
 }

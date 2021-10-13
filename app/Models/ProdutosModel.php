@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ProdutosModel extends Model
 {
     protected $table                = 'cad_produtos';
-    protected $primaryKey           = 'idProdutos';
+    protected $primaryKey           = 'idProduto';
     protected $returnType           = 'array';
     protected $allowedFields        = ['idProdutos', 'nomeProduto', 'precoProduto', 'categoria', 'descricaoProduto', 'imagem'];
     protected $createdField         = 'created_at';
@@ -24,13 +24,12 @@ class ProdutosModel extends Model
      
     // protected $skipValidation       = false;
 
-     public function todosProdutos()
+     public function pegarProdutos($id = null)
     {
-       $query = "SELECT * FROM cad_produtos";
-
-       $q = $this->db->query($query);
-    //    var_dump($q->getResultArray());exit;
-        return $q->getResultArray();
+       if($id === null){
+           return $this->findAll();
+       }
+       return $this->asArray()->where(['idProduto' => $id])->first();
     }
 
 

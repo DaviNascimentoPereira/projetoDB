@@ -37,7 +37,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
   <div class="container" style="margin-left: 90px;">
     <div class="row justify-content-md-center">
       <?php foreach ($dados as $key => $dado) {
@@ -48,7 +47,7 @@
         $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
         $htm .= '               <p class="card-text">' . $dado['descricaoProduto'] . '</p>';
         $htm .= '               <p class="card-text">' . $dado['precoProduto'] . '</p>';
-        $htm .= '               <a href="#" class="btn btn-primary">Ver produto</a>';
+        $htm .= '               <a href="produto/'.$dado['idProduto'].'" class="btn btn-primary">Ver produto</a>';
         $htm .= '           </div> 
                       </div>
                   ';

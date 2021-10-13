@@ -46,22 +46,13 @@
                         $htm .= '<td>'.$dado['nomeProduto'].'</td>';
                         $htm .= '<td>'.$dado['categoria'].'</td>'; 
                         $htm .= '<td>'.$dado['precoProduto'].'</td>'; 
-                        $htm .= '<td><a href="#">Editar</a> / <a href="#">Excluir</a></td>';
+                        $htm .= '<td><a href="editar/'.$dado['idProduto'].'">Editar</a> / <a href="excluir/'.$dado['idProduto'].'" onclick="return confirma()">Excluir</a></td>';
                         $htm .= '</tr>';
 
                         echo $htm;
                          } 
                          
                           ?>
-                        
-                        
-                        <!-- <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><a href="#">Editar</a> / <a href="#">Excluir</a></td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -74,3 +65,11 @@
             </div>
     </div>
 </main>
+<script>
+function confirma(){
+    if(!confirm("Deseja excluir?")){
+        return false;
+    }
+    return true;
+}
+</script>

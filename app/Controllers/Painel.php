@@ -15,13 +15,8 @@ class Painel extends BaseController
 		$data = [
 			'title' => 'Kalango - Administração',
 			'titulo' => 'Painel de Manutenção - Produtos',
-			'dados' => $produtoModel->findAll(),
+			'dados' => $produtoModel->pegarProdutos(),
 		];
-
-		// foreach($data['dados'] as $dado){
-		// 	echo($dado['nomeProduto']);			
-		// }
-		
 
 		echo view('PainelAdm/templetePainel/header', $data);
 		echo view('PainelAdm/painel');
