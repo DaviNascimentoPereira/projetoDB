@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ClienteModel;
 class Inicio extends BaseController{
+    
     public function index(){
 
         $data['title'] = "Kalango";
@@ -11,7 +12,7 @@ class Inicio extends BaseController{
         $produtoModel = new \App\Models\ProdutosModel();
 
         $data = [
-			'title' => 'Kalango - Administração',
+			'title' => 'Kalango - Home',
 			'dados' => $produtoModel->findAll(),
 		];
 
@@ -29,4 +30,19 @@ class Inicio extends BaseController{
         echo view('catalogo');
         echo view('templete/footer');
     }  
+
+    public function visualizarProduto()
+    { 
+        $produtoModel = new \App\Models\ProdutosModel();
+
+        $data = [
+            'title' => 'Kalango',
+            'titulo' => 'Produtos',
+            'dados' => $produtoModel->pegarProdutos(),
+        ];
+      
+        echo view('templete/header', $data);
+        echo view('produto') ;
+        echo view('templete/footer');
+    }
 }

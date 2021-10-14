@@ -69,23 +69,25 @@ class Produtos extends BaseController
         echo view('PainelAdm/templetePainel/footer');
     }
 
-    public function visualizarProduto($idProduto = null)
-    {
-        $uri = current_url(true);
-        $idProduto = $uri->getSegment(3);
+    public function visualizarProduto($id)
+    { 
         $produtoModel = new \App\Models\ProdutosModel();
+        // $uri = current_url(true);
+        // $idProduto = $uri->getSegment(3);
+       
         // $data['dados'] = $produtoModel->pegarProdutos($id);
 
         $data = [
             'title' => 'Kalango',
             'titulo' => 'Produtos',
-            'dados' => $produtoModel->pegarProdutos($idProduto),
+            'dados' => $produtoModel->pegarProdutos($id),
         ];
-        var_dump($data['dados'] = $produtoModel->pegarProdutos($idProduto));
-        exit;
+        //  var_dump($data['dados']);
+        // exit;
 
+      
         echo view('templete/header', $data);
-        // echo view('produto') ;
+        echo view('produto') ;
         echo view('templete/footer');
     }
 }
