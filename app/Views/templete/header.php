@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo $title ?></title>
-    <link rel="icon" type="image/ico" href="<?php base_url('') ?>public/icon.ico" />
+    <link rel="icon" type="image/ico" href="<?php echo base_url('public/icon.ico') ?>" />
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <!-- folha de estilos interno -->
-    <link rel="stylesheet" type="text/css" href="<?php base_url() ?>assests/estilos.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assests/estilos.css')?>">
     <!-- javascript interno -->
-    <script type="text/javascript" src="<?php base_url('') ?>assests/javascript.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('/assests/javascript.js') ?>"></script>
 </head>
 
 <header id="t3-header">
