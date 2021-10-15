@@ -19,13 +19,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="<?php base_url() ?>public/images/tambPrincipal1.jpg" class="d-block w-100 img" alt="...">
+        <img src="<?php base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="<?php base_url() ?>public/images/tambPrincipal2.jpg" class="d-block w-100 img" alt="...">
+        <img src="<?php base_url('public/images/tambPrincipal2.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="<?php base_url() ?>public/images/tambPrincipal3.jpg" class="d-block w-100 img" alt="...">
+        <img src="<?php base_url('public/images/tambPrincipal3.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
