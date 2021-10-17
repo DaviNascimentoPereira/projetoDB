@@ -39,6 +39,8 @@ $routes->match(['get','post'],'/catalogo', 'Produtos::index');
 
 $routes->match(['get','post'],'/cadastroProdutos', 'Produtos::cadastroProduto');
 $routes->match(['get','post'],'/produto/(:num)', 'Produtos::visualizarProduto');
+$routes->match(['get','post'],'/editar/(:num)', 'Produtos::editarProduto');
+$routes->match(['get','post'],'/excluir/(:num)', 'Produtos::deleteProduto');
 
 $routes->match(['get','post'],'/login', 'Login::index');
 

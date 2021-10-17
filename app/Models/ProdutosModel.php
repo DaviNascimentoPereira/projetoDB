@@ -9,7 +9,7 @@ class ProdutosModel extends Model
     protected $table                = 'cad_produtos';
     protected $primaryKey           = 'idProduto';
     protected $returnType           = 'array';
-    protected $allowedFields        = ['idProdutos', 'nomeProduto', 'precoProduto', 'categoria', 'descricaoProduto', 'imagem'];
+    protected $allowedFields        = ['idProdutos', 'nomeProduto', 'precoProduto', 'categoria', 'descricaoProduto', 'imagem', 'estoque'];
     protected $createdField         = 'created_at';
     protected $validationRules      = [];
     protected $validationMessages = [];

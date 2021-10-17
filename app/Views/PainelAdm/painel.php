@@ -27,7 +27,7 @@
         <div class="row justify-content-md-center">
             <div class="col-12 col-md-6 table">
                 <h2> <?php echo $titulo ?></h2>
-                <a href="<?php base_url('Painel/') ?>cadastroProdutos">Novo</a>
+                <a href="<?php echo base_url('cadastroProdutos') ?>">Novo</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -35,6 +35,7 @@
                             <th scope="col">Nome do produto</th>
                             <th scope="col">Categoria</th>
                             <th scope="col">Preço</th>
+                            <th scope="col">Estoque</th>
                             <th scope="col">Acão</th>
                         </tr>
                     </thead>
@@ -46,7 +47,8 @@
                         $htm .= '<td>'.$dado['nomeProduto'].'</td>';
                         $htm .= '<td>'.$dado['categoria'].'</td>'; 
                         $htm .= '<td>'.$dado['precoProduto'].'</td>'; 
-                        $htm .= '<td><a href="editar/'.$dado['idProduto'].'">Editar</a> / <a href="excluir/'.$dado['idProduto'].'" onclick="return confirma()">Excluir</a></td>';
+                        $htm .= '<td>'.$dado['estoque'].'</td>'; 
+                        $htm .= '<td><a href="'.base_url('editar/'.$dado['idProduto']).'">Editar</a> / <a href="'.base_url('excluir/'.$dado['idProduto']).'" onclick="return confirma()">Excluir</a></td>';
                         $htm .= '</tr>';
 
                         echo $htm;

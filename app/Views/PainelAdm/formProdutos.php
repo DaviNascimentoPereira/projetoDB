@@ -24,18 +24,19 @@
     <div class="container">
         <div class="row justify-content-md-center">
 
-
-
+     
             <div class="col-6">
-                <h2> <?php echo $titulo ?></h2>
-                <form class="form-signin" method="post" id="file" method="post" enctype="multipart/form-data">
+                <h2> <?php echo isset($idProduto) ? "Editando Produto" : "Cadastrando Produto"; ?></h2>
+                <?php echo \Config\Services::validation()->listErrors(); ?>
+
+                <form class="form-signin" action="<?php echo base_url('Produtos/cadastroProduto') ?>" method="post" id="file" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nomeProduto">Nome do produto:</label>
-                        <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" required>
+                        <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" value="<?php echo isset($nomeProduto) ? $nomeProduto : set_value('nomeProduto') ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="precoProduto">Preço do produto:</label>
-                        <input type="text" class="form-control" name="precoProduto" id="precoProduto" required>
+                        <input type="text" class="form-control" name="precoProduto" id="precoProduto" value="<?php echo isset($precoProduto) ? $precoProduto : set_value('precoProduto') ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="categoria">Categoria</label>
@@ -50,20 +51,23 @@
                             <option value="7">Categoria 7</option>
                         </select>
                     </div>
-
+                    <div class="form-group">
+                        <label for="estoque">Quantidade do produto:</label>
+                        <input type="text" class="form-control" name="estoque" id="estoque" value="<?php echo isset($estoque) ? $estoque : set_value('estoque') ?>" required>
+                    </div>
                     <div class="form-group">
                         <label for="descricaoProduto">Descrição do produto:</label>
-                        <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3" required></textarea>
+                        <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3"  required> <?php echo isset($descricaoProduto) ? $descricaoProduto : set_value('descricaoProduto') ?> </textarea>
                     </div>
 
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="file"></label>
                             <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="image/*" readonly="true" required autofocus>
-                            <!-- <img id="blah" alt="imagem" /> -->
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <input type="hidden" name="idProduto" value="<?php echo isset($idProduto) ? $idProduto : set_value('idProduto') ?>">
+                    <button type="submit"  class="btn btn-primary">Salvar</button>
                 </form>
             </div>
 

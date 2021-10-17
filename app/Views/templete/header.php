@@ -67,7 +67,7 @@
 <nav class="navbar navbar-expand-lg" id="menuanchor">
     <div class="row container-fluid">
         <div class="col-12 col-md-3 col-sm-12 col-xs-12">
-            <a class="navbar-brand" href="<?php base_url('') ?>inicio"><img src="<?php echo base_url() ?>/public/images/logo2.png" alt=""></a>
+            <a class="navbar-brand" href="<?php echo base_url('Inicio/')?>"><img src="<?php echo base_url('/public/images/logo2.png') ?>" alt=""></a>
         </div>
 
         <div class="col-12 col-md-6">
@@ -89,30 +89,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php base_url() ?>catalogo"><span>Arte, Desenho &
+                    <a class="nav-link" aria-current="page" href="<?php echo base_url('catalogo') ?>"><span>Arte, Desenho &
                             Pintura</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Papéis & Blocos</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Papéis & Blocos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Pastas, Bolsas &
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Pastas, Bolsas &
                             Mochilas</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Corte, Colagem &
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Corte, Colagem &
                             Maquetes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Escritório,
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escritório,
                             Informática & Eletrônicos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php base_url('Produtos/') ?>catalogo"><span>Escrita & Corretivos</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escrita & Corretivos</span></a>
                 </li>
 
             </ul>

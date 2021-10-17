@@ -19,13 +19,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="<?php base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
+        <img src="<?php echo base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="<?php base_url('public/images/tambPrincipal2.jpg') ?>" class="d-block w-100 img" alt="...">
+        <img src="<?php echo base_url('public/images/tambPrincipal2.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="<?php base_url('public/images/tambPrincipal3.jpg') ?>" class="d-block w-100 img" alt="...">
+        <img src="<?php echo base_url('public/images/tambPrincipal3.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -40,18 +40,19 @@
   <div class="container" style="margin-left: 90px;">
     <div class="row justify-content-md-center">
       <?php foreach ($dados as $key => $dado) {
-    
-        $htm = '       <div class="card" style="width: 18rem;">';
-        $htm .= '           <img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="...">';
-        $htm .= '           <div class="card-body">';
-        $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
-        $htm .= '               <p class="card-text">' . $dado['descricaoProduto'] . '</p>';
-        $htm .= '               <p class="card-text">' . $dado['precoProduto'] . '</p>';
-        $htm .= '               <a href="produto/'.$dado['idProduto'].'" class="btn btn-primary">Ver produto</a>';
-        $htm .= '           </div> 
-                      </div>
-                  ';
-        echo $htm;
+
+          $htm = '       <div class="card" style="width: 18rem;">';
+          $htm .= '           <img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="...">';
+          $htm .= '           <div class="card-body">';
+          $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
+          $htm .= '               <p class="card-text">' . $dado['descricaoProduto'] . '</p>';
+          $htm .= '               <p class="card-text">Preço: ' . $dado['precoProduto'] . '</p>';
+          $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
+          $htm .= '               <a href="produto/' . $dado['idProduto'] . '" class="btn btn-primary">Ver produto</a>';
+          $htm .= '           </div> 
+                        </div>
+                    ';
+          echo $htm;
       }
       ?>
     </div>

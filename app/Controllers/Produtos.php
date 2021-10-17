@@ -20,17 +20,22 @@ class Produtos extends BaseController
     {
         $data['title'] = "Kalango - Cadastro de Produtos";
         $data['titulo'] = "Cadastro de Produtos";
+
         helper(['form', 'url']);
         if ($this->request->getMethod() == 'post') {
             $produtoModel = new \App\Models\ProdutosModel();
             $uploadImagem = $this->upload_image($this->request->getFile('profile_image'));
             $dados = [
+                'idProduto' => $this->request->getPost('idProduto'),
                 'nomeProduto' => $this->request->getPost('nomeProduto'),
                 'precoProduto' => $this->request->getPost('precoProduto'),
                 'categoria' => $this->request->getPost('categoria'),
                 'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                 'imagem' => $uploadImagem,
+                'estoque' => $this->request->getPost('estoque'),
             ];
+
+
             if ($produtoModel->save($dados)) {
                 $data['msg'] = 'Produto cadastrado com sucesso!!!!';
                 return redirect()->to(base_url('administracao'));
@@ -40,7 +45,7 @@ class Produtos extends BaseController
             }
         }
         echo view('PainelAdm/templetePainel/header', $data);
-        echo view('PainelAdm/cadProdutos', $data);
+        echo view('PainelAdm/formProdutos');
         echo view('PainelAdm/templetePainel/footer');
     }
 
@@ -55,21 +60,52 @@ class Produtos extends BaseController
         }
     }
 
-    public function editarProduto()
+    public function editarProduto($idProduto = null)
     {
-        $data['title'] = "Kalango - Cadastro de Produtos";
-        $data['titulo'] = "Cadastro de Produtos";
+        $produtoModel = new \App\Models\ProdutosModel();
+        $uri = current_url(true);
+        $idProduto = $uri->getSegment(4);
+        $dados['dado'] = $produtoModel->pegarProdutos($idProduto);
 
         helper(['form', 'url']);
 
+         
+        $dados = [
+            'title' => 'Edição de produtos',
+            'idProduto' => $dados['dado']['idProduto'],
+            'nomeProduto' => $dados['dado']['nomeProduto'],
+            'precoProduto' => $dados['dado']['precoProduto'],
+            'categoria' => $dados['dado']['categoria'],
+            'estoque' => $dados['dado']['estoque'],
+            'descricaoProduto' => $dados['dado']['descricaoProduto'],
+            'imagem' => $dados['dado']['imagem'],
+        ];
 
+        // var_dump($dados);exit;
 
-        echo view('PainelAdm/templetePainel/header', $data);
-        echo view('PainelAdm/cadProdutos', $data);
+        echo view('PainelAdm/templetePainel/header', $dados);
+        echo view('PainelAdm/formProdutos');
         echo view('PainelAdm/templetePainel/footer');
     }
 
-    public function visualizarProduto()
+    public function deleteProduto($idProduto = null){
+        $produtoModel = new \App\Models\ProdutosModel();
+        $uri = current_url(true);
+        $idProduto = $uri->getSegment(4);
+        
+        $data['dado'] = $produtoModel->delete($idProduto);
+
+        $data = [
+			'title' => 'Kalango - Administração',
+			'titulo' => 'Painel de Manutenção - Produtos',
+			'dados' => $produtoModel->pegarProdutos(),
+		];
+       
+        echo view('PainelAdm/templetePainel/header', $data);
+		echo view('PainelAdm/painel');
+		echo view('PainelAdm/templetePainel/footer');
+    }
+    public function visualizarProduto($idProduto = null)
     { 
         $produtoModel = new \App\Models\ProdutosModel();
          $uri = current_url(true);
