@@ -1,3 +1,5 @@
+
+
 <main id="t3-content" style="min-height: 85vh; background-image: url(img/fundo.jpg) !important;">
     <style>
         table {
@@ -41,14 +43,79 @@
                     <div class="form-group">
                         <label for="categoria">Categoria</label>
                         <select class="form-control" name="categoria" id="categoria" required>
-                            <option selected disabled>categoria</option>
+
+                        <?php
+                          var_dump($nomeProduto);exit;
+                              if ($categoria == 1) {
+                                echo '<option value="1" id="1" selected="selected">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                            }  else if ($categoria == 2) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2" selected="selected">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                                echo '<option value="6" id="6">Categoria 6</option>';
+                                echo '<option value="7" id="7">Categoria 7</option>';
+                            }  else if ($categoria == 3) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3" selected="selected">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                                echo '<option value="6" id="6">Categoria 6</option>';
+                                echo '<option value="7" id="7">Categoria 7</option>';
+                            }  else if ($categoria == 4) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4" selected="selected">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                                echo '<option value="6" id="6">Categoria 6</option>';
+                                echo '<option value="7" id="7">Categoria 7</option>';
+                            }  else if ($categoria == 5) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5" selected="selected">Categoria 5</option>';
+                                echo '<option value="6" id="6">Categoria 6</option>';
+                                echo '<option value="7" id="7">Categoria 7</option>';
+                            }  else if ($categoria == 6) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                                echo '<option value="4" id="4" selected="selected">Categoria 6</option>';
+                                echo '<option value="5" id="5">Categoria 7</option>';
+                            }  else if ($categoria == 7) {
+                                echo '<option value="1" id="1">Categoria 1</option>';
+                                echo '<option value="2" id="2">Categoria 2</option>';
+                                echo '<option value="3" id="3">Categoria 3</option>';
+                                echo '<option value="4" id="4">Categoria 4</option>';
+                                echo '<option value="5" id="5">Categoria 5</option>';
+                                echo '<option value="6" id="6">Categoria 6</option>';
+                                echo '<option value="7" id="7" selected="selected">Categoria 7</option>';
+                            }  
+
+                            
+                          
+                        ?>
+
+
+
+                            <!-- <option selected disabled>categoria</option>
                             <option value="1">Categoria 1</option>
                             <option value="2">Categoria 2</option>
                             <option value="3">Categoria 3</option>
                             <option value="4">Categoria 4</option>
                             <option value="5">Categoria 5</option>
                             <option value="6">Categoria 6</option>
-                            <option value="7">Categoria 7</option>
+                            <option value="7">Categoria 7</option> -->
                         </select>
                     </div>
                     <div class="form-group">
@@ -57,13 +124,14 @@
                     </div>
                     <div class="form-group">
                         <label for="descricaoProduto">Descrição do produto:</label>
-                        <textarea class="form-control" name="descricaoProduto" id="descricaoProduto" rows="3"  required> <?php echo isset($descricaoProduto) ? $descricaoProduto : set_value('descricaoProduto') ?> </textarea>
+                        <textarea class="form-control" name="descricaoProduto" id="summernote" rows="5"  required> <?php echo isset($descricaoProduto) ? $descricaoProduto : set_value('descricaoProduto') ?> </textarea>
                     </div>
 
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="file"></label>
-                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="image/*" readonly="true" required autofocus>
+                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="image/*" readonly="true" value="<?php echo isset($imagem) ? $imagem : set_value('imagem') ?>" required autofocus>
+                            <img id="blah" type="file" alt="imagem" src="<?php echo isset($imagem) ? base_url("public/images") . "/" . $imagem : '' ?>" />
                         </div>
                     </div>
                     <input type="hidden" name="idProduto" value="<?php echo isset($idProduto) ? $idProduto : set_value('idProduto') ?>">

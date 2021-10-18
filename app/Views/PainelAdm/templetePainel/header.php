@@ -3,7 +3,7 @@
 <style>
     .navbar {
         background: #E6E6FA !important;
-        
+        mar
     }
 </style>
 
@@ -83,7 +83,7 @@
             <a class="nav-item nav-link active" href="<?php echo base_url('painel') ?>">Produtos</a>
             <a class="nav-item nav-link" href="#">Promoções</a>
             <a class="nav-item nav-link" href="#">Usuários</a>
-            <a class="nav-item nav-link" href="#">Ver Site</a>
+            <a class="nav-item nav-link" target="_blank" href="<?php echo base_url('inicio') ?>">Ver Site</a>
             <a class="nav-item nav-link" href="#">Sair</a>
         </div>
     </div>

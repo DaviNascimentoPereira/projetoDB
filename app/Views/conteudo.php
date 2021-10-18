@@ -39,14 +39,14 @@
   </div>
   <div class="container" style="margin-left: 90px;">
     <div class="row justify-content-md-center">
+    
       <?php foreach ($dados as $key => $dado) {
-
+          $preco = str_replace(".", ",", $dado['precoProduto']);
           $htm = '       <div class="card" style="width: 18rem;">';
           $htm .= '           <img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="...">';
           $htm .= '           <div class="card-body">';
           $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
-          $htm .= '               <p class="card-text">' . $dado['descricaoProduto'] . '</p>';
-          $htm .= '               <p class="card-text">Preço: ' . $dado['precoProduto'] . '</p>';
+          $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
           $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
           $htm .= '               <a href="produto/' . $dado['idProduto'] . '" class="btn btn-primary">Ver produto</a>';
           $htm .= '           </div> 

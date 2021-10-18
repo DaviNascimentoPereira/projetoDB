@@ -8,7 +8,8 @@
         <div class="col-6 col-md-6">
             <h2> <?php echo $dados['nomeProduto'] ?></h2>
             <p>Descrição: <?php echo $dados['descricaoProduto'] ?></p>
-            <p>Preço: <?php echo $dados['precoProduto'] ?></p>
+        <?php $preco = str_replace(".", ",", $dados['precoProduto']);?>
+            <p>Preço: <?php echo $preco; ?></p>
             <p>Quantidade: <?php echo $dados['estoque'] ?></p>
             <button type="submit" class="btn btn-primary">Comprar</button>
         </div>
