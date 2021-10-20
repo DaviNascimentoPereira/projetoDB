@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <!-- folha de estilos interno -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assests/estilos.css')?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assests/estilos.css') ?>">
     <!-- javascript interno -->
     <script type="text/javascript" src="<?php echo base_url('/assests/javascript.js') ?>"></script>
 </head>
@@ -67,7 +67,7 @@
 <nav class="navbar navbar-expand-lg" id="menuanchor">
     <div class="row container-fluid">
         <div class="col-12 col-md-3 col-sm-12 col-xs-12">
-            <a class="navbar-brand" href="<?php echo base_url('Inicio/')?>"><img src="<?php echo base_url('/public/images/logo2.png') ?>" alt=""></a>
+            <a class="navbar-brand" href="<?php echo base_url('Inicio/') ?>"><img src="<?php echo base_url('/public/images/logo2.png') ?>" alt=""></a>
         </div>
 
         <div class="col-12 col-md-6">
@@ -87,27 +87,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="
-    margin-left: 50px;
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 26%;
 ">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php echo base_url('catalogo') ?>"><span>Arte, Desenho &
-                            Pintura</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Cadernos e Papelaria</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Corte, Colagem &
-                            Maquetes</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Papéis & Blocos</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Pastas, Bolsas &
-                            Mochilas</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Corte, Colagem &
-                            Maquetes</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Mochilas e Bolsas</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escritório,
@@ -116,7 +102,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escrita & Corretivos</span></a>
                 </li>
-
             </ul>
 
         </div>

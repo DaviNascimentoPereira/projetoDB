@@ -21,6 +21,7 @@ class Produtos extends BaseController
         $dados['title'] = "Kalango - Cadastro de Produtos";
         $dados['titulo'] = "Cadastro de Produtos";
         helper(['form', 'url']);
+
         if ($this->request->getMethod() == 'post') {
             $produtoModel = new \App\Models\ProdutosModel();
             if ($this->request->getFile('profile_image')->isValid()) {
@@ -32,7 +33,6 @@ class Produtos extends BaseController
                         'precoProduto' => $this->request->getPost('precoProduto'),
                         'categoria' => $this->request->getPost('categoria'),
                         'descricaoProduto' => $this->request->getPost('descricaoProduto'),
-                        // 'imagem' => $uploadImagem,
                         'estoque' => $this->request->getPost('estoque'),
                     ];
                     $imagem = $uploadImagem;

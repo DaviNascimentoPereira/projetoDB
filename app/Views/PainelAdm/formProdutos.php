@@ -23,13 +23,11 @@
     <br>
     <div class="container">
         <div class="row justify-content-md-center">
-
-
             <div class="col-6">
                 <h2> <?php echo isset($idProduto) ? "Editando Produto" : "Cadastrando Produto"; ?></h2>
                 <?php echo \Config\Services::validation()->listErrors(); ?>
 
-                <form class="form-signin" action="<?php echo base_url('Produtos/cadastroProduto') ?>" method="post" id="file" method="post" enctype="multipart/form-data">
+                <form class="form-signin" action="<?php echo base_url('Produtos/cadastroProduto') ?>"  id="file" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nomeProduto">Nome do produto:</label>
                         <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" value="<?php echo isset($nomeProduto) ? $nomeProduto : set_value('nomeProduto') ?>" required>
