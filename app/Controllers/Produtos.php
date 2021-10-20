@@ -37,17 +37,17 @@ class Produtos extends BaseController
                     ];
                     $imagem = $uploadImagem;
                     if ($imagem != null) {
-                    $dados['imagem'] = $imagem;
-                        }
-                        if ($produtoModel->save($dados)) {
-                            $dados['msg'] = 'Produto cadastrado com sucesso!!!!';
-                            return redirect()->to(base_url('administracao'));
-                        } else {
-                            $dados['msg'] = 'Produto não cadastrado';
-                            $dados['erros'] = $produtoModel->errors();
-                        }
+                        $dados['imagem'] = $imagem;
+                    }
+                    if ($produtoModel->save($dados)) {
+                        $dados['msg'] = 'Produto cadastrado com sucesso!!!!';
+                        return redirect()->to(base_url('administracao'));
+                    } else {
+                        $dados['msg'] = 'Produto não cadastrado';
+                        $dados['erros'] = $produtoModel->errors();
+                    }
                 }
-            }else{
+            } else {
                 $dados = [
                     'idProduto' => $this->request->getPost('idProduto'),
                     'nomeProduto' => $this->request->getPost('nomeProduto'),
@@ -74,8 +74,8 @@ class Produtos extends BaseController
                 'imagem' => $uploadImagem,
                 'estoque' => $this->request->getPost('estoque'),
             ];
-            
-    
+
+
 
             if ($produtoModel->save($dados)) {
                 $dados['msg'] = 'Produto cadastrado com sucesso!!!!';
@@ -108,20 +108,21 @@ class Produtos extends BaseController
         if ($imageFile->move(ROOTPATH . 'public/images/', $nome)) {
             return $nome;
         } else {
-            return false;      
+            return false;
+        }
     }
-}
 
     public function editarProduto($idProduto = null)
     {
         $produtoModel = new \App\Models\ProdutosModel();
         $uri = current_url(true);
         $idProduto = $uri->getSegment(4);
+
         $dados['dado'] = $produtoModel->pegarProdutos($idProduto);
-     
+
         helper(['form', 'url']);
 
-      
+
         $dados = [
             'title' => 'Edição de produtos',
             'idProduto' => $dados['dado']['idProduto'],
@@ -133,7 +134,7 @@ class Produtos extends BaseController
             'imagem' => $dados['dado']['imagem'],
         ];
 
-        
+
         // var_dump($dados);exit;
 
         echo view('PainelAdm/templetePainel/header', $dados);
@@ -141,39 +142,40 @@ class Produtos extends BaseController
         echo view('PainelAdm/templetePainel/footer');
     }
 
-    public function deleteProduto($idProduto = null){
+    public function deleteProduto($idProduto = null)
+    {
         $produtoModel = new \App\Models\ProdutosModel();
         $uri = current_url(true);
         $idProduto = $uri->getSegment(4);
-        
+
         $data['dado'] = $produtoModel->delete($idProduto);
 
         $data = [
-			'title' => 'Kalango - Administração',
-			'titulo' => 'Painel de Manutenção - Produtos',
-			'dados' => $produtoModel->pegarProdutos(),
-		];
-       
+            'title' => 'Kalango - Administração',
+            'titulo' => 'Painel de Manutenção - Produtos',
+            'dados' => $produtoModel->pegarProdutos(),
+        ];
+
         echo view('PainelAdm/templetePainel/header', $data);
-		echo view('PainelAdm/painel');
-		echo view('PainelAdm/templetePainel/footer');
+        echo view('PainelAdm/painel');
+        echo view('PainelAdm/templetePainel/footer');
     }
     public function visualizarProduto($idProduto = null)
-    { 
+    {
         $produtoModel = new \App\Models\ProdutosModel();
-         $uri = current_url(true);
-         $idProduto = $uri->getSegment(4);
-        
+        $uri = current_url(true);
+        $idProduto = $uri->getSegment(4);
+
 
         $data = [
             'title' => 'Kalango',
             'titulo' => 'Produtos',
             'dados' => $produtoModel->pegarProdutos($idProduto),
         ];
-        
-      
+
+
         echo view('templete/header', $data);
-        echo view('produto') ;
+        echo view('produto');
         echo view('templete/footer');
     }
 }

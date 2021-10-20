@@ -43,7 +43,7 @@
       <?php foreach ($dados as $key => $dado) {
           $preco = str_replace(".", ",", $dado['precoProduto']);
           $htm = '       <div class="card" style="width: 18rem;">';
-          $htm .= '           <img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="...">';
+          $htm .= '           <div class="col3"><img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="..."></div>';
           $htm .= '           <div class="card-body">';
           $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
           $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
