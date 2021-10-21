@@ -32,5 +32,10 @@ class ProdutosModel extends Model
        return $this->asArray()->where(['idProduto' => $id])->first();
     }
 
+    public function pegarCategoria($categoria = null)
+    {
+        $produtoCategoria = 'SELECT * FROM cad_produtos WHERE categoria =' .$categoria;
+        return $produtoCategoria;
+    }
 
 }

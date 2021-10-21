@@ -77,7 +77,7 @@
             </form>
         </div>
         <div class="col-12 col-md-3 col-sm-12 col-xs-12">
-            <a href="<?php base_url('Clientes/') ?>login">Faça login</a> ou <a href="<?php base_url('Clientes/') ?>cadastro">cadastre-se</a>
+            <a href="<?php echo base_url('login') ?>">Faça login</a> ou <a href="<?php echo base_url('cadastro') ?>">cadastre-se</a>
         </div>
     </div>
 </nav>
@@ -90,17 +90,17 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 26%;
 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Cadernos e Papelaria</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/1')?>" ><span>Cadernos e Papelaria</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Mochilas e Bolsas</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/2') ?>"><span>Mochilas e Bolsas</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escritório,
+                    <a class="nav-link" href="<?php echo base_url('catalogo/3') ?>"><span>Escritório,
                             Informática & Eletrônicos</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo') ?>"><span>Escrita & Corretivos</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/4') ?>"><span>Escrita & Corretivos</span></a>
                 </li>
             </ul>
 

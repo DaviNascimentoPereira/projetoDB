@@ -21,15 +21,7 @@ class Inicio extends BaseController{
         echo view('templete/footer');
     }
 
-    public function catalogo(){
-        
-        
-        $data['title'] = "Kalango - Produtos";
-
-        echo view('templete/header', $data);
-        echo view('catalogo');
-        echo view('templete/footer');
-    }  
+    
 
     public function visualizarProduto()
     { 
