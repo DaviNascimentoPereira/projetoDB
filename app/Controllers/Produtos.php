@@ -6,22 +6,7 @@ use App\Models\ClienteModel;
 
 class Produtos extends BaseController
 {
-    public function catalogoProdutos()
-    {
-        $produtoModel = new \App\Models\ProdutosModel();
-        $uri = current_url(true);
-        $categoria = $uri->getSegment(4);
-
-        
-        $data['title'] = "Kalango - Produtos";
-        $data['dados'] = $produtoModel->pegarCategoria($categoria);
-       
-        var_dump($data['dados']);
-        
-        echo view('templete/header', $data);
-        echo view('catalogo');
-        echo view('templete/footer');
-    }
+    
 
     public function cadastroProduto()
     {

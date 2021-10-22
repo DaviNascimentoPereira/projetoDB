@@ -3,6 +3,12 @@
     padding: 0px;
     margin: 5px;
     width: 18rem;
+    height: 400px;
+  }
+
+  .cardImg {
+    width: 100%;
+    height: 200px;
   }
 
   .carousel {
@@ -38,21 +44,22 @@
     </button>
   </div>
   <div class="container" style="margin-left: 90px;">
+  
     <div class="row justify-content-md-center">
-    
+
       <?php foreach ($dados as $key => $dado) {
-          $preco = str_replace(".", ",", $dado['precoProduto']);
-          $htm = '       <div class="card">';
-          $htm .= '           <div class="col3"><img src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="..."></div>';
-          $htm .= '           <div class="card-body">';
-          $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
-          $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
-          $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
-          $htm .= '               <a href="produto/' . $dado['idProduto'] . '" class="btn btn-primary">Ver produto</a>';
-          $htm .= '           </div> 
+        $preco = str_replace(".", ",", $dado['precoProduto']);
+        $htm = '       <div class="card">';
+        $htm .= '           <div class="col3"><img class="cardImg" src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="..."></div>';
+        $htm .= '           <div class="card-body">';
+        $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
+        $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
+        $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
+        $htm .= '               <a href="'.base_url('produto/'.$dado['idProduto']).'" class="btn btn-primary">Ver produto</a>';
+        $htm .= '           </div> 
                         </div>
                     ';
-          echo $htm;
+        echo $htm;
       }
       ?>
     </div>

@@ -21,12 +21,30 @@ class Inicio extends BaseController{
         echo view('templete/footer');
     }
 
-    
+    public function catalogoProdutos()
+    {
+        helper(['form', 'url']);
+        
+        $produtoModel = new \App\Models\ProdutosModel();
+
+        $uri = current_url(true);
+        $categoria = $uri->getSegment(4);
+
+        
+        $data['title'] = "Kalango - Produtos";
+        $data['dados'] = $produtoModel->pegarCategoria($categoria);
+       
+        // var_dump($data['dados']);exit;
+        
+        echo view('templete/header', $data);
+        echo view('catalogo');
+        echo view('templete/footer');
+    }
 
     public function visualizarProduto()
     { 
         $produtoModel = new \App\Models\ProdutosModel();
-
+        
         $data = [
             'title' => 'Kalango',
             'titulo' => 'Produtos',

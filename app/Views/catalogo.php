@@ -1,70 +1,36 @@
+<style>
+  .card {
+    padding: 0px;
+    margin: 5px;
+    width: 18rem;
+    height: 400px;
+  }
+
+  .cardImg {
+    width: 100%;
+    height: 200px;
+  }
+</style>
+
 <main id="t3-content" style="min-height: 70vh;">
-    <div class="container" style="margin-left: 75px;">
+    <div class="container" style="margin-left: 90px;">
         <div class="row justify-content-md-center">
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="<?php base_url() ?>public/images/200.gif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+    
+        <?php foreach ($dados as $key => $dado) {
+        $preco = str_replace(".", ",", $dado['precoProduto']);
+        $htm = '       <div class="card">';
+        $htm .= '           <div class="col3"><img class="cardImg" src="'.base_url('public/images/'.$dado['imagem']).'" class="card-img-top" alt="..."></div>';
+        $htm .= '           <div class="card-body">';
+        $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
+        $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
+        $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
+        $htm .= '               <a href="'.base_url('produto/'.$dado['idProduto']).'" class="btn btn-primary">Ver produto</a>';
+        $htm .= '           </div> 
+                        </div>
+                    ';
+        echo $htm;
+      }
+      ?>
         </div>
-    </div>
+      </div>
 </main>

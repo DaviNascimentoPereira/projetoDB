@@ -34,8 +34,10 @@ class ProdutosModel extends Model
 
     public function pegarCategoria($categoria = null)
     {
-        $produtoCategoria = 'SELECT * FROM cad_produtos WHERE categoria =' .$categoria;
-        return $produtoCategoria;
+        $produtoCategoria = "SELECT * FROM cad_produtos WHERE categoria = " .$categoria;
+        
+        $produtosSelecionados = $this->db->query($produtoCategoria);
+        return $produtosSelecionados ->getResultArray();
     }
 
 }

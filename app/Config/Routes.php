@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Inicio::index');
 
-$routes->match(['get','post'],'/catalogo/(:num)', 'Produtos::catalogoProdutos');
+$routes->match(['get','post'],'/catalogo/(:num)', 'Inicio::catalogoProdutos');
 
 
 $routes->match(['get','post'],'/cadastroProdutos', 'Produtos::cadastroProduto');

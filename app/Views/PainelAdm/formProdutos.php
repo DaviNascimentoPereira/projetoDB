@@ -125,8 +125,8 @@
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="file"></label>
-                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="image/*" readonly="true" value="<?php echo isset($imagem) ? $imagem : set_value('imagem') ?>" required autofocus>
-                            <img id="blah" type="file" alt="imagem" src="<?php echo isset($imagem) ? base_url("public/images") . "/" . $imagem : '' ?>" />
+                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="images/*" readonly="true"  required autofocus>
+                            <img id="blah" type="file" alt="imagem" src="<?php echo isset($imagem) ? base_url("public/images") . "/" . $imagem : base_url("public/images") . "/" . $imagem ?>" />
                         </div>
                     </div>
                     <input type="hidden" name="idProduto" value="<?php echo isset($idProduto) ? $idProduto : set_value('idProduto') ?>">
