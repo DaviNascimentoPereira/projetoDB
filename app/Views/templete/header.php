@@ -90,10 +90,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 26%;
 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo/1')?>" ><span>Cadernos e Papelaria</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/1')?>" ><span>Cadernos & Papelaria</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo/2') ?>"><span>Mochilas e Bolsas</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/2') ?>"><span>Mochilas & Bolsas</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('catalogo/3') ?>"><span>Escritório,

@@ -1,4 +1,4 @@
-<main id="t3-content" style="min-height: 85vh; background-image: url(img/fundo.jpg) !important;">
+<main id="t3-content" style="min-height: 85vh; background-image: url(<?php //echo base_url('public/images/fundo4.png')?>) !important;">
     <style>
         table {
             margin: 0px;

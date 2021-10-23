@@ -44,72 +44,33 @@
 
                             if (isset($categoria)) {
                                 if ($categoria == 1) {
-                                    echo '<option value="1" id="1" selected="selected">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7">Categoria 7</option>';
+                                    echo '<option value="1" id="1" selected="selected">Cadernos e Papelaria</option>';
+                                    echo '<option value="2" id="2">Mochilas e Bolsas</option>';
+                                    echo '<option value="3" id="3">Escritório, informática e eletrônicos</option>';
+                                    echo '<option value="4" id="4">Escrita e corretivos</option>';
                                 } else if ($categoria == 2) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2" selected="selected">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7">Categoria 7</option>';
+                                    echo '<option value="1" id="1">Cadernos e Papelaria</option>';
+                                    echo '<option value="2" id="2" selected="selected">Mochilas e Bolsas</option>';
+                                    echo '<option value="3" id="3">Escritório, informática e eletrônicos</option>';
+                                    echo '<option value="4" id="4">Escrita e corretivos</option>';
                                 } else if ($categoria == 3) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3" selected="selected">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7">Categoria 7</option>';
+                                    echo '<option value="1" id="1">Cadernos e Papelaria</option>';
+                                    echo '<option value="2" id="2">Mochilas e Bolsas</option>';
+                                    echo '<option value="3" id="3" selected="selected">Escritório, informática e eletrônicos</option>';
+                                    echo '<option value="4" id="4">Escrita e corretivos</option>';
                                 } else if ($categoria == 4) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4" selected="selected">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7">Categoria 7</option>';
-                                } else if ($categoria == 5) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5" selected="selected">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7">Categoria 7</option>';
-                                } else if ($categoria == 6) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="4" id="4" selected="selected">Categoria 6</option>';
-                                    echo '<option value="5" id="5">Categoria 7</option>';
-                                } else if ($categoria == 7) {
-                                    echo '<option value="1" id="1">Categoria 1</option>';
-                                    echo '<option value="2" id="2">Categoria 2</option>';
-                                    echo '<option value="3" id="3">Categoria 3</option>';
-                                    echo '<option value="4" id="4">Categoria 4</option>';
-                                    echo '<option value="5" id="5">Categoria 5</option>';
-                                    echo '<option value="6" id="6">Categoria 6</option>';
-                                    echo '<option value="7" id="7" selected="selected">Categoria 7</option>';
-                                }
+                                    echo '<option value="1" id="1">Cadernos e Papelaria</option>';
+                                    echo '<option value="2" id="2">Mochilas e Bolsas</option>';
+                                    echo '<option value="3" id="3">Escritório, informática e eletrônicos</option>';
+                                    echo '<option value="4" id="4" selected="selected">Escrita e corretivos</option>';
+                                } 
                             }else{
                             ?>
                             <option selected disabled>categoria</option>
-                            <option value="1">Categoria 1</option>
-                            <option value="2">Categoria 2</option>
-                            <option value="3">Categoria 3</option>
-                            <option value="4">Categoria 4</option>
-                            <option value="5">Categoria 5</option>
-                            <option value="6">Categoria 6</option>
-                            <option value="7">Categoria 7</option>
+                            <option value="1">Cadernos e Papelaria</option>
+                            <option value="2">Mochilas e Bolsas</option>
+                            <option value="3">Escritório, informática e eletrônicos</option>
+                            <option value="4">Escrita e corretivos</option>
                             <?php } ?>
                         </select>
                     </div>

@@ -23,7 +23,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="height: 400px;">
       <div class="carousel-item active">
         <img src="<?php echo base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
@@ -43,22 +43,21 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div class="container" style="margin-left: 90px;">
+  <div class="container" style="margin-left: 15%;">
   
     <div class="row justify-content-md-center">
 
-      <?php foreach ($dados as $key => $dado) {
+    <?php foreach ($dados as $key => $dado) {
         $preco = str_replace(".", ",", $dado['precoProduto']);
         $htm = '       <div class="card">';
-        $htm .= '           <div class="col3"><img class="cardImg" src="public/images/' . $dado['imagem'] . '" class="card-img-top" alt="..."></div>';
+        $htm .= '           <div><img class="cardImg" src="'.base_url('public/images/'.$dado['imagem']).'" class="card-img-top" alt="..."></div>';
         $htm .= '           <div class="card-body">';
         $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
         $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
         $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
-        $htm .= '               <a href="'.base_url('produto/'.$dado['idProduto']).'" class="btn btn-primary">Ver produto</a>';
-        $htm .= '           </div> 
-                        </div>
-                    ';
+        $htm .= '           </div>';
+        $htm .= '           <a href="'.base_url('produto/'.$dado['idProduto']).'" class="btn btn-primary">Ver produto</a>';
+        $htm .= '           </div>';
         echo $htm;
       }
       ?>
