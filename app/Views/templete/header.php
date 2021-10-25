@@ -35,9 +35,6 @@
                             <a accesskey="4" href="javascript:void(0);" class="anchor acess" title="contraste" onclick="contraste();" id="contrasteLink">
                                 alto contraste <span>4</span>
                             </a>
-                            <a accesskey="5" href="#" class="anchor acess " title="acessibilidade">
-                                acessibilidade <span>5</span>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -71,8 +68,8 @@
         </div>
 
         <div class="col-12 col-md-6">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="<?php echo base_url('Produtos/pesquisaProduto') ?>" id="file" method="post" enctype="multipart/form-data">
+                <input class="form-control me-2" type="search" name="pesquisa" placeholder="Buscar..." aria-label="Busca" required>
                 <button class="btn btn botao" type="submit">Buscar</button>
             </form>
         </div>
@@ -90,7 +87,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 26%;
 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('catalogo/1')?>" ><span>Cadernos & Papelaria</span></a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo/1') ?>"><span>Cadernos & Papelaria</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('catalogo/2') ?>"><span>Mochilas & Bolsas</span></a>

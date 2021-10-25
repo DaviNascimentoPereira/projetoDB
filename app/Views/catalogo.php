@@ -14,8 +14,12 @@
 
 <main id="t3-content" style="min-height: 70vh;">
     <div class="container" style="margin-left: 15%;">
-        <div class="row justify-content-md-center">
-    
+        <div class="row">
+    <?php 
+      if($dados == null){
+        echo '<p><h2>Nenhum produdo encontrado...</h2></p>';
+      }
+    ?>
         <?php foreach ($dados as $key => $dado) {
         $preco = str_replace(".", ",", $dado['precoProduto']);
         $htm = '       <div class="card">';

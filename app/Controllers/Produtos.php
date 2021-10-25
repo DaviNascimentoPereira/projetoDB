@@ -170,4 +170,21 @@ class Produtos extends BaseController
         echo view('produto');
         echo view('templete/footer');
     }
+
+    public function pesquisaProduto($busca = null)
+    {
+        $produtoModel = new \App\Models\ProdutosModel();
+
+        $busca = $this->request->getPost('pesquisa');
+        
+        $data = [
+            'title' => 'Kalango',
+            'dados' => $produtoModel->pesquisaProdutos($busca),
+        ];
+
+
+        echo view('templete/header', $data);
+        echo view('catalogo');
+        echo view('templete/footer');
+    }
 }
