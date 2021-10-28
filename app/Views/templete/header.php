@@ -17,7 +17,7 @@
 </head>
 
 <header id="t3-header" style="background: #f47f04;">
-    <div class="container" style="margin-left: 60%;">
+    <div class="container" style="margin-right: 100%;">
         <div class="row justify-content-md-center">
             <div class="col-12 col-sm-12">
                 <div class="site-anchor " style="margin-top: -5px;margin-bottom: 5px;">
@@ -73,8 +73,8 @@
                 <button class="btn btn botao" type="submit">Buscar</button>
             </form>
         </div>
-        <div class="col-12 col-md-3 col-sm-12 col-xs-12">
-            <a href="<?php echo base_url('login') ?>"  class="btn btn-primary">Faça login</a> ou <a href="<?php echo base_url('cadastro') ?>"  class="btn btn-primary">cadastre-se</a>
+        <div class="col-12 col-md-3 col-sm-12 col-xs-12" style="margin: 10px;">
+            <a href="<?php echo base_url('login') ?>"  class="btn btn-primary">Faça login</a> ou <a href="<?php echo base_url('cadastro') ?>"  class="btn btn-primary">Cadastre-se</a>
         </div>
     </div>
 </nav>
