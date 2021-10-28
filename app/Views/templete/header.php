@@ -16,24 +16,24 @@
     <script type="text/javascript" src="<?php echo base_url('/assests/javascript.js') ?>"></script>
 </head>
 
-<header id="t3-header">
-    <div class="container">
+<header id="t3-header" style="background: #f47f04;">
+    <div class="container" style="margin-left: 60%;">
         <div class="row justify-content-md-center">
             <div class="col-12 col-sm-12">
                 <div class="site-anchor " style="margin-top: -5px;margin-bottom: 5px;">
                     <div class="custom">
                         <div id="anchorpt1" class="col-12 col-md-12">
                             <a accesskey="1" href="javascript:void(0);" class="anchor acess" title="conteudo" onclick="abrirConteudo()">
-                                ir para conteudo <span>1</span>
-                            </a>
+                                Ir para conteudo <span> &darr; 1</span>
+                            </a> |
                             <a accesskey="2" href="javascript:void(0);" class="anchor acess" title="menu" onclick="abrirMenu()">
-                                ir para menu <span>2</span>
-                            </a>
+                                Ir para menu <span> &darr; 2</span>
+                            </a> |
                             <a accesskey="3" href="javascript:void(0);" class="anchor acess" title="rodapé" onclick="abrirRodape()">
-                                ir para rodapé <span>3</span>
-                            </a>
+                                Ir para rodapé <span> &darr; 3</span>
+                            </a> |
                             <a accesskey="4" href="javascript:void(0);" class="anchor acess" title="contraste" onclick="contraste();" id="contrasteLink">
-                                alto contraste <span>4</span>
+                                Alto contraste <span> &darr; 4</span>
                             </a>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
             </form>
         </div>
         <div class="col-12 col-md-3 col-sm-12 col-xs-12">
-            <a href="<?php echo base_url('login') ?>">Faça login</a> ou <a href="<?php echo base_url('cadastro') ?>">cadastre-se</a>
+            <a href="<?php echo base_url('login') ?>"  class="btn btn-primary">Faça login</a> ou <a href="<?php echo base_url('cadastro') ?>"  class="btn btn-primary">cadastre-se</a>
         </div>
     </div>
 </nav>

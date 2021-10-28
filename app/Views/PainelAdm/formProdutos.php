@@ -19,15 +19,20 @@
         .table {
             width: 90%;
         }
+
+        #blah {
+            margin-top: 15px;
+            width: 100%;
+        }
     </style>
     <br>
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-6">
+            <div class="col-12 col-md-6 table">
                 <h2> <?php echo isset($idProduto) ? "Editando Produto" : "Cadastrando Produto"; ?></h2>
                 <?php echo \Config\Services::validation()->listErrors(); ?>
 
-                <form class="form-signin" action="<?php echo base_url('Produtos/cadastroProduto') ?>"  id="file" method="post" enctype="multipart/form-data">
+                <form class="form-signin" action="<?php echo base_url('Produtos/cadastroProduto') ?>" id="file" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nomeProduto">Nome do produto:</label>
                         <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" value="<?php echo isset($nomeProduto) ? $nomeProduto : set_value('nomeProduto') ?>" required>
@@ -63,14 +68,14 @@
                                     echo '<option value="2" id="2">Mochilas e Bolsas</option>';
                                     echo '<option value="3" id="3">Escritório, informática e eletrônicos</option>';
                                     echo '<option value="4" id="4" selected="selected">Escrita e corretivos</option>';
-                                } 
-                            }else{
+                                }
+                            } else {
                             ?>
-                            <option selected disabled>categoria</option>
-                            <option value="1">Cadernos e Papelaria</option>
-                            <option value="2">Mochilas e Bolsas</option>
-                            <option value="3">Escritório, informática e eletrônicos</option>
-                            <option value="4">Escrita e corretivos</option>
+                                <option selected disabled>categoria</option>
+                                <option value="1">Cadernos e Papelaria</option>
+                                <option value="2">Mochilas e Bolsas</option>
+                                <option value="3">Escritório, informática e eletrônicos</option>
+                                <option value="4">Escrita e corretivos</option>
                             <?php } ?>
                         </select>
                     </div>
@@ -86,10 +91,11 @@
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="file"></label>
-                            <input class="form-control" onchange="readURL(this);" type="file" name="profile_image" id="file" accept="images/*" readonly="true"  required autofocus>
-                            <img id="blah" type="file" alt="imagem" src="<?php echo isset($imagem) ? base_url("public/images") . "/" . $imagem : base_url("public/images") . "/" . $imagem ?>" />
+                            <input class="form-control" type="file" onchange="readURL(this);" name="profile_image" id="file" accept="images/*" readonly="true" required autofocus>
+                            <img id="blah" type="file" alt="imagem" src="<?php echo isset($imagem) ? base_url("public/images") . "/" . $imagem : '' ?>" />
                         </div>
                     </div>
+
                     <input type="hidden" name="idProduto" value="<?php echo isset($idProduto) ? $idProduto : set_value('idProduto') ?>">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
@@ -101,16 +107,9 @@
 </main>
 
 <script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
 
-            reader.onload = function(e) {
-                $('#blah')
-                    .attr('src', e.target.result);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+    function readURL(event) {
+        var tmppath = URL.createObjectURL(event.files[0]);        
+        document.getElementById('blah').src =  URL.createObjectURL(event.files[0]);
+     }
 </script>

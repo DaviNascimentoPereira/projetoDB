@@ -114,7 +114,7 @@ class Produtos extends BaseController
 
         helper(['form', 'url']);
 
-
+        // var_dump($dados);exit;
         $dados = [
             'title' => 'Edição de produtos',
             'idProduto' => $dados['dado']['idProduto'],

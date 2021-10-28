@@ -23,7 +23,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner" style="height: 400px;">
+    <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="<?php echo base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
