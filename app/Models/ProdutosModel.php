@@ -42,6 +42,7 @@ class ProdutosModel extends Model
 
     public function pesquisaProdutos($busca = null)
     {
+        $busca = strtolower ($busca );
         $produtoPesquisado = "SELECT * FROM cad_produtos WHERE LOWER(nomeProduto) LIKE '%".$busca."%'";
         $produtosSelecionados = $this->db->query($produtoPesquisado);
         return $produtosSelecionados ->getResultArray();

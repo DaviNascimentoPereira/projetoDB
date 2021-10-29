@@ -19,7 +19,23 @@ class Painel extends BaseController
 		];
 
 		echo view('PainelAdm/templetePainel/header', $data);
-		echo view('PainelAdm/painel');
+		echo view('PainelAdm/painelProdutos');
+		echo view('PainelAdm/templetePainel/footer');
+	}
+
+	public function painelPromocoes()
+	{
+		$produtoModel = new \App\Models\ProdutosModel();
+
+		// echo 'hey';exit;
+		$data = [
+			'title' => 'Kalango - Administração',
+			'titulo' => 'Painel de Manutenção - Promoções',
+			'dados' => $produtoModel->pegarProdutos(),
+		];
+
+		echo view('PainelAdm/templetePainel/header', $data);
+		echo view('PainelAdm/painelPromocoes');
 		echo view('PainelAdm/templetePainel/footer');
 	}
 

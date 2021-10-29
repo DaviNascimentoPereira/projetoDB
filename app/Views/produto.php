@@ -11,7 +11,7 @@
             <h2> <?php echo $dados['nomeProduto'] ?></h2>
             <p>Descrição: <?php echo $dados['descricaoProduto'] ?></p>
             <?php $preco = str_replace(".", ",", $dados['precoProduto']); ?>
-            <p>Preço: <?php echo $preco; ?></p>
+            <p>Preço: R$<?php echo $preco; ?></p>
             <p>Quantidade: <?php echo $dados['estoque'] ?></p>
             <button type="submit" class="btn btn-primary">Comprar</button>
         </div>

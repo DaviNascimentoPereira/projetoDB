@@ -1,30 +1,5 @@
 <main id="t3-content" style="min-height: 85vh; background-image: url(img/fundo.jpg) !important;">
-    <style>
-        table {
-            margin: 0px;
-            padding: 0px;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .nav-link {
-            color: black !important;
-
-        }
-
-        .nav {
-            width: 150px;
-        }
-
-        .table {
-            width: 90%;
-        }
-
-        #blah {
-            margin-top: 15px;
-            width: 100%;
-        }
-    </style>
+    
     <br>
     <div class="container">
         <div class="row justify-content-md-center">

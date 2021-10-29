@@ -5,6 +5,10 @@
         background: #E6E6FA !important;
         
     }
+    .nav-link {
+            color: black !important;
+
+        }
 </style>
 
 <head>
@@ -23,7 +27,7 @@
 </head>
 
 <header id="t3-header">
-    <div class="container">
+    <div class="container" style="margin-right: 100%;">
         <div class="row justify-content-md-center">
             <div class="col-12 col-sm-12">
                 <div class="site-anchor " style="margin-top: -5px;margin-bottom: 5px;">
@@ -69,15 +73,14 @@
         </div>
     </div>
 </header>
-<nav class="navbar navbar-expand-lg navbar">
-
+<nav class="navbar navbar-expand-lg menuPrincipal">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="<?php echo base_url('painel') ?>">Produtos</a>
-            <a class="nav-item nav-link" href="#">Promoções</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url('produtos') ?>">Produtos</a>
+            <a class="nav-item nav-link" href="<?php echo base_url('promocoes') ?>">Promoções</a>
             <a class="nav-item nav-link" href="#">Usuários</a>
             <a class="nav-item nav-link" target="_blank" href="<?php echo base_url('inicio') ?>">Ver Site</a>
             <a class="nav-item nav-link" href="#">Sair</a>

@@ -13,7 +13,23 @@
         }
         
    
+        table {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .nav {
+            width: 150px;
+        }
+        .table {
+            width: 90%;
+        }
 
+        #blah {
+            margin-top: 15px;
+            width: 100%;
+        }
         .menuPrincipal {
             background: #000 !important;
         }
