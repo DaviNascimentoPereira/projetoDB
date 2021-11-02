@@ -51,7 +51,7 @@
     </button>
   </div>
   <div class="container" style="margin-left: 15%;">
-  
+      <?php var_dump($dadosProdutos) ?>
     <div class="row">
     <?php 
       if($dadosProdutos == null){
@@ -60,11 +60,17 @@
     ?>
     <?php foreach ($dadosProdutos as $key => $dado) {
         $preco = str_replace(".", ",", $dado['precoProduto']);
+        $precoPromocao = str_replace(".", ",", $dado['precoPromocao']);
+
         $htm = '       <div class="card">';
         $htm .= '           <div><img class="cardImg" src="'.base_url('public/images/'.$dado['imagem']).'" class="card-img-top" alt="..."></div>';
         $htm .= '           <div class="card-body">';
         $htm .= '               <h5 class="card-title">' . $dado['nomeProduto'] . '</h5>';
+        if ($dado['precoPromocao'] != 0) {
+          $htm .= 'De R$<s>'.$preco.'</s> por '. $precoPromocao; 
+      } else {
         $htm .= '               <p class="card-text">Preço: R$ ' . $preco . '</p>';
+      }
         $htm .= '               <p class="card-text"> Quantidade: ' . $dado['estoque'] . '</p>';
         $htm .= '           </div>';
         $htm .= '           <a href="'.base_url('produto/'.$dado['idProduto']).'" class="btn btn-primary">Ver produto</a>';

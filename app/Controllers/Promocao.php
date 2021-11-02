@@ -119,6 +119,7 @@ class Promocao extends BaseController
 		$promocaoModel = new \App\Models\PromocaoModel();
 		$uri = current_url(true);
 		$idPromocao = $uri->getSegment(4);
+		$dados['data'] = $promocaoModel->pegarPromocao();
 		$data = [
 			'title' => 'Kalango - Administração',
 			'titulo' => 'Painel de Manutenção - Promoções',
@@ -126,25 +127,24 @@ class Promocao extends BaseController
 			'emPromocao' => $promocaoModel->produtosPromocao($idPromocao),
 			'promocao' => $promocaoModel->pegarPromocao($idPromocao),
 		];
+		$data['data'] = $promocaoModel->pegarPromocao();
 		echo view('PainelAdm/templetePainel/header', $data);
 		echo view('PainelAdm/tabProdutosPromo');
 		echo view('PainelAdm/templetePainel/footer');
 	}
 	public function adicionarNaPromocao()
 	{
-		helper(['form', 'url']);
 		$promocaoModel = new \App\Models\PromocaoModel();
-		if ($this->request->getMethod() == 'post') {
-			$dados = [
-				'title' => "Kalango - Administração",
-				'idProduto' => $this->request->getPost('idProduto'),
-				'precoPromocao' => $this->request->getPost('precoPromocao'),
-				'promocao' => $this->request->getPost('promocao'),
-			];
-		}
-		// var_dump($dados);
-		// exit;
-		if ($promocaoModel->save($dados)) {
+		$produtosModel = new \App\Models\ProdutosModel();
+
+		helper(['form', 'url']);
+		$dados = [
+			'idProduto' => $this->request->getPost('idProduto'),
+			'precoPromocao' => $this->request->getPost('precoPromocao'),
+			'promocao' => $this->request->getPost('promocao'),
+		];
+		// var_dump($dados); exit;
+		if ($produtosModel->save($dados)) {
 			$dados['msg'] = 'Produto cadastrado com sucesso!!!!';
 			return redirect()->to(base_url('promocoes'));
 		} else {
@@ -159,10 +159,14 @@ class Promocao extends BaseController
 	public function editarProdutoPromocao($idProduto = null)
 	{
 		$produtoModel = new \App\Models\ProdutosModel();
+		$promocaoModel = new \App\Models\PromocaoModel();
+
 		$uri = current_url(true);
 		$idProduto = $uri->getSegment(4);
 		$dados['dado'] = $produtoModel->pegarProdutos($idProduto);
+
 		helper(['form', 'url']);
+
 		$dados = [
 			'title' => 'Adicionando produto na promoção',
 			'idProduto' => $dados['dado']['idProduto'],
@@ -170,7 +174,10 @@ class Promocao extends BaseController
 			'precoProduto' => $dados['dado']['precoProduto'],
 			'precoPromocao' => $dados['dado']['precoPromocao'],
 			'promocao' => $dados['dado']['promocao'],
+			'promocoes' => $promocaoModel->pegarPromocao(),
+
 		];
+		// var_dump($dados);exit;
 		echo view('PainelAdm/templetePainel/header', $dados);
 		echo view('PainelAdm/adicionarEmPromocao');
 		echo view('PainelAdm/templetePainel/footer');
