@@ -40,12 +40,15 @@ $routes->match(['get','post'],'/cadastroPromocao', 'Promocao::cadastroPromocao')
 
 $routes->match(['get','post'],'/cadastroProdutos', 'Produtos::cadastroProduto');
 $routes->match(['get','post'],'/produto/(:num)', 'Produtos::visualizarProduto');
-$routes->match(['get','post'],'/editar/(:num)', 'Produtos::editarProduto');
-$routes->match(['get','post'],'/excluir/(:num)', 'Produtos::deleteProduto');
+$routes->match(['get','post'],'/editarProduto/(:num)', 'Produtos::editarProduto');
+$routes->match(['get','post'],'/excluirProduto/(:num)', 'Produtos::deleteProduto');
 
 $routes->match(['get','post'],'/cadastroPromocao', 'Promocao::cadastroPromocao');
-// $routes->match(['get','post'],'/editar/(:num)', 'Produtos::editarProduto');
-// $routes->match(['get','post'],'/excluir/(:num)', 'Produtos::deleteProduto');
+$routes->match(['get','post'],'/editarPromocao/(:num)', 'Promocao::editarPromocao');
+$routes->match(['get','post'],'/excluirPromocao/(:num)', 'Promocao::deletePromocao');
+$routes->match(['get','post'],'/promocaoProdutos/(:num)', 'Promocao::promocaoProdutos');
+$routes->match(['get','post'],'/editarProdutoPromocao/(:num)', 'Promocao::editarProdutoPromocao');
+
 
 $routes->match(['get','post'],'/login', 'Login::index');
 

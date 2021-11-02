@@ -15,24 +15,31 @@
     padding: 0px;
     margin: 0px;
   }
+  .img {
+            width: 250px;
+            height: 500px;
+        }
 </style>
 <main id="t3-content" style="min-height: 70vh;">
   <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <!-- <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"  aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+    </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="<?php echo base_url('public/images/tambPrincipal1.jpg') ?>" class="d-block w-100 img" alt="...">
+        <img src="<?php echo base_url('public/images/banner.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
-      <div class="carousel-item">
-        <img src="<?php echo base_url('public/images/tambPrincipal2.jpg') ?>" class="d-block w-100 img" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="<?php echo base_url('public/images/tambPrincipal3.jpg') ?>" class="d-block w-100 img" alt="...">
-      </div>
+      <?php 
+        foreach ($dadosPromocao as $key => $promocao) { 
+        
+        $htmPromocao = '<div class="carousel-item">';
+        $htmPromocao .= '<img src="'.base_url('public/images/'.$promocao['imagemPromocao']).'" class="d-block w-100 img" alt="...">';
+        $htmPromocao .= '</div>';
+        echo $htmPromocao;
+      } 
+      ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,11 +54,11 @@
   
     <div class="row">
     <?php 
-      if($dados == null){
+      if($dadosProdutos == null){
         echo '<p><h2>Nenhum produdo encontrado...</h2></p>';
       }
     ?>
-    <?php foreach ($dados as $key => $dado) {
+    <?php foreach ($dadosProdutos as $key => $dado) {
         $preco = str_replace(".", ",", $dado['precoProduto']);
         $htm = '       <div class="card">';
         $htm .= '           <div><img class="cardImg" src="'.base_url('public/images/'.$dado['imagem']).'" class="card-img-top" alt="..."></div>';

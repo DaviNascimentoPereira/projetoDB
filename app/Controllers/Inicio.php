@@ -10,12 +10,14 @@ class Inicio extends BaseController{
         $data['title'] = "Kalango";
         
         $produtoModel = new \App\Models\ProdutosModel();
+        $promocaoModel = new \App\Models\PromocaoModel();
 
         $data = [
 			'title' => 'Kalango - Home',
-			'dados' => $produtoModel->findAll(),
+			'dadosProdutos' => $produtoModel->findAll(),
+            'dadosPromocao' => $promocaoModel->findAll(),
 		];
-
+        // var_dump($data['dadosPromocao']);exit;
         echo view('templete/header', $data);
         echo view('conteudo');
         echo view('templete/footer');

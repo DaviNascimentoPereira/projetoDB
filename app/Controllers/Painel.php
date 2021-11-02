@@ -25,13 +25,13 @@ class Painel extends BaseController
 
 	public function painelPromocoes()
 	{
-		$produtoModel = new \App\Models\ProdutosModel();
+		$promocaoModel = new \App\Models\PromocaoModel();
 
 		// echo 'hey';exit;
 		$data = [
 			'title' => 'Kalango - Administração',
 			'titulo' => 'Painel de Manutenção - Promoções',
-			'dados' => $produtoModel->pegarProdutos(),
+			'dados' => $promocaoModel->pegarPromocao(),
 		];
 
 		echo view('PainelAdm/templetePainel/header', $data);

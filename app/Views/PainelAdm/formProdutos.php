@@ -1,5 +1,10 @@
 <main id="t3-content" style="min-height: 85vh; background-image: url(img/fundo.jpg) !important;">
-    
+    <style>
+         #blah {
+            margin-top: 15px !important;
+            width: 100% !important;
+        }
+    </style>
     <br>
     <div class="container">
         <div class="row justify-content-md-center">
@@ -71,8 +76,11 @@
                         </div>
                     </div>
 
+                           
+                    
+
                     <input type="hidden" name="idProduto" value="<?php echo isset($idProduto) ? $idProduto : set_value('idProduto') ?>">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary" style="margin: 10px;">Salvar</button>
                 </form>
             </div>
 

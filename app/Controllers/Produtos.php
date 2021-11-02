@@ -13,9 +13,9 @@ class Produtos extends BaseController
         $dados['title'] = "Kalango - Cadastro de Produtos";
         $dados['titulo'] = "Cadastro de Produtos";
         helper(['form', 'url']);
+        $produtoModel = new \App\Models\ProdutosModel();
 
         if ($this->request->getMethod() == 'post') {
-            $produtoModel = new \App\Models\ProdutosModel();
             if ($this->request->getFile('profile_image')->isValid()) {
                 $uploadImagem = $this->upload_image($this->request->getFile('profile_image'));
                 if ($uploadImagem) {
@@ -26,6 +26,8 @@ class Produtos extends BaseController
                         'categoria' => $this->request->getPost('categoria'),
                         'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                         'estoque' => $this->request->getPost('estoque'),
+                        'promocao' =>  0,
+                        'precoPromocao' =>  0,
                     ];
                     $imagem = $uploadImagem;
                     if ($imagem != null) {
@@ -47,6 +49,8 @@ class Produtos extends BaseController
                     'categoria' => $this->request->getPost('categoria'),
                     'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                     'estoque' => $this->request->getPost('estoque'),
+                    'promocao' =>  0,
+                    'precoPromocao' =>  0,
                 ];
                 if ($produtoModel->save($dados)) {
                     $dados['msg'] = 'Produto cadastrado com sucesso!!!!';
@@ -65,6 +69,8 @@ class Produtos extends BaseController
                 'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                 'imagem' => $uploadImagem,
                 'estoque' => $this->request->getPost('estoque'),
+                'promocao' =>  0,
+                'precoPromocao' =>  0,
             ];
 
 
@@ -77,6 +83,7 @@ class Produtos extends BaseController
                 $dados['erros'] = $produtoModel->errors();
             }
         }
+
         echo view('PainelAdm/templetePainel/header', $dados);
         echo view('PainelAdm/formProdutos');
         echo view('PainelAdm/templetePainel/footer');
@@ -123,6 +130,7 @@ class Produtos extends BaseController
             'categoria' => $dados['dado']['categoria'],
             'estoque' => $dados['dado']['estoque'],
             'descricaoProduto' => $dados['dado']['descricaoProduto'],
+            'promocao' => $dados['dado']['promocao'],
             'imagem' => $dados['dado']['imagem'],
         ];
 
@@ -149,7 +157,7 @@ class Produtos extends BaseController
         ];
 
         echo view('PainelAdm/templetePainel/header', $data);
-        echo view('PainelAdm/painel');
+        echo view('PainelAdm/painelProdutos');
         echo view('PainelAdm/templetePainel/footer');
     }
     public function visualizarProduto($idProduto = null)
@@ -187,4 +195,6 @@ class Produtos extends BaseController
         echo view('catalogo');
         echo view('templete/footer');
     }
+
+    
 }

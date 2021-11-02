@@ -9,7 +9,7 @@ class ProdutosModel extends Model
     protected $table                = 'cad_produtos';
     protected $primaryKey           = 'idProduto';
     protected $returnType           = 'array';
-    protected $allowedFields        = ['idProdutos', 'nomeProduto', 'precoProduto', 'categoria', 'descricaoProduto', 'imagem', 'estoque'];
+    protected $allowedFields        = ['idProdutos', 'nomeProduto', 'precoProduto', 'categoria', 'descricaoProduto', 'imagem', 'estoque', 'promocao', 'precoPromocao'];
     protected $createdField         = 'created_at';
     protected $validationRules      = [];
     protected $validationMessages = [];
@@ -44,6 +44,7 @@ class ProdutosModel extends Model
     {
         $busca = strtolower ($busca );
         $produtoPesquisado = "SELECT * FROM cad_produtos WHERE LOWER(nomeProduto) LIKE '%".$busca."%'";
+        
         $produtosSelecionados = $this->db->query($produtoPesquisado);
         return $produtosSelecionados ->getResultArray();
     }

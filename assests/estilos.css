@@ -27,9 +27,10 @@
         }
 
         #blah {
-            margin-top: 15px;
-            width: 100%;
+            margin-top: 15px !important;
+            width: 100% !important;
         }
+        
         .menuPrincipal {
             background: #000 !important;
         }
