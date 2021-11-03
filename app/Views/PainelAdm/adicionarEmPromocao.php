@@ -25,16 +25,18 @@
                         <label for="precoPromocao">Novo preço para o produto:</label>
                         <input type="text" class="form-control" name="precoPromocao" id="precoPromocao" value="<?php echo isset($precoPromocao) ? $precoPromocao : set_value('precoPromocao') ?>" require>
                     </div>
+
+              
                     <div class="form-group">
-                        <label for="promocao">Inserir na promoção: </label>
-                        <select class="form-control" name="promocao" id="promocao" require>
+                        <label for="idPromocao">Inserir na promoção: </label>
+                        <select class="form-control" name="idPromocao" id="idPromocao" require>
                         <option selected disabled>Selecione um status para o produto</option>
                             <?php
                             echo '<option value="' . 0 . '">Remover da promoção</option>';
-                            foreach ($promocoes as $key => $promocaoDisponivel) {
+                           foreach ($promocoes as $key => $promocaoDisponivel) {
                                 echo 'hey';
                                 echo ' <option  value="' . $promocaoDisponivel['idPromocao'] . '">' . $promocaoDisponivel['idPromocao'] . ' - ' . $promocaoDisponivel['nomePromocao'] . '</option>';
-                            }
+                           }
                             ?>
                         </select>
                     </div>

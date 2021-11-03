@@ -125,7 +125,7 @@ class Promocao extends BaseController
 			'titulo' => 'Painel de Manutenção - Promoções',
 			'dados' => $promocaoModel->produtosForaPromocao($idPromocao),
 			'emPromocao' => $promocaoModel->produtosPromocao($idPromocao),
-			'promocao' => $promocaoModel->pegarPromocao($idPromocao),
+			'idPromocao' => $promocaoModel->pegarPromocao($idPromocao),
 		];
 		$data['data'] = $promocaoModel->pegarPromocao();
 		echo view('PainelAdm/templetePainel/header', $data);
@@ -141,7 +141,7 @@ class Promocao extends BaseController
 		$dados = [
 			'idProduto' => $this->request->getPost('idProduto'),
 			'precoPromocao' => $this->request->getPost('precoPromocao'),
-			'promocao' => $this->request->getPost('promocao'),
+			'idPromocao' => $this->request->getPost('idPromocao'),
 		];
 		// var_dump($dados); exit;
 		if ($produtosModel->save($dados)) {
@@ -155,6 +155,40 @@ class Promocao extends BaseController
 		echo view('PainelAdm/templetePainel/header', $dados);
 		echo view('PainelAdm/adicionarEmPromocao');
 		echo view('PainelAdm/templetePainel/footer');
+	}
+	public function removePromocao($idProduto = null)
+	{
+		$produtoModel = new \App\Models\ProdutosModel();
+		$promocaoModel = new \App\Models\PromocaoModel();
+		
+		$uri = current_url(true);
+		$idProduto = $uri->getSegment(4);
+		
+	
+		$dados = [
+			'idProduto' => $idProduto,
+			'promocao' =>  '0',
+			'precoPromocao' =>  '0',
+		];
+
+		$data = [
+			'title' => 'Kalango - Administração',
+			'titulo' => 'Painel de Manutenção - Promoção',
+			'dados' => $promocaoModel->pegarPromocao(),
+		];
+
+			//   var_dump($dados);exit;
+
+		if ($produtoModel->save($dados)) {
+			$dados['msg'] = 'Produto cadastrado com sucesso!!!!';
+			return redirect()->to(base_url('promocoes'));
+		} else {
+			$dados['msg'] = 'Produto não cadastrado';
+			$dados['erros'] = $produtoModel->errors();
+		}
+		// echo view('PainelAdm/templetePainel/header', $data);
+		// echo view('PainelAdm/painelPromocoes');
+		// echo view('PainelAdm/templetePainel/footer');
 	}
 	public function editarProdutoPromocao($idProduto = null)
 	{
@@ -173,7 +207,7 @@ class Promocao extends BaseController
 			'nomeProduto' => $dados['dado']['nomeProduto'],
 			'precoProduto' => $dados['dado']['precoProduto'],
 			'precoPromocao' => $dados['dado']['precoPromocao'],
-			'promocao' => $dados['dado']['promocao'],
+			'idPromocao' => $dados['dado']['idPromocao'],
 			'promocoes' => $promocaoModel->pegarPromocao(),
 
 		];

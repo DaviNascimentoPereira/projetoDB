@@ -22,18 +22,12 @@
 </style>
 <main id="t3-content" style="min-height: 70vh;">
   <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
-    <!-- <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"  aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="<?php echo base_url('public/images/banner.jpg') ?>" class="d-block w-100 img" alt="...">
       </div>
       <?php 
         foreach ($dadosPromocao as $key => $promocao) { 
-        
         $htmPromocao = '<div class="carousel-item">';
         $htmPromocao .= '<img src="'.base_url('public/images/'.$promocao['imagemPromocao']).'" class="d-block w-100 img" alt="...">';
         $htmPromocao .= '</div>';
@@ -51,7 +45,7 @@
     </button>
   </div>
   <div class="container" style="margin-left: 15%;">
-      <?php var_dump($dadosProdutos) ?>
+     
     <div class="row">
     <?php 
       if($dadosProdutos == null){

@@ -34,20 +34,20 @@ class PromocaoModel extends Model
 
     public function produtosPromocao($idPromocao = null)
     {
-        $produtosEmPromocao = "SELECT * FROM cad_produtos WHERE promocao = " . $idPromocao;
+        $produtosEmPromocao = "SELECT * FROM cad_produtos WHERE idPromocao = " . $idPromocao;
         $produtosSelecionados = $this->db->query($produtosEmPromocao);
         return $produtosSelecionados ->getResultArray();
     }
     public function produtosForaPromocao($idPromocao = null)
     {
-        $produtosEmPromocao = "SELECT * FROM cad_produtos WHERE promocao = 0";
+        $produtosEmPromocao = "SELECT * FROM cad_produtos WHERE idPromocao = 0";
         $produtosSelecionados = $this->db->query($produtosEmPromocao);
         return $produtosSelecionados ->getResultArray();
     }
 
     public function IrPromocoes($promocao = null)
     {
-        $produtoPromocao = "SELECT * FROM cad_produtos WHERE promocao = " .$promocao;
+        $produtoPromocao = "SELECT * FROM cad_produtos WHERE idPromocao = " .$promocao;
         
         $produtosSelecionados = $this->db->query($produtoPromocao);
         return $produtosSelecionados ->getResultArray();

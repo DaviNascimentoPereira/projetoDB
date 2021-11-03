@@ -26,7 +26,7 @@ class Produtos extends BaseController
                         'categoria' => $this->request->getPost('categoria'),
                         'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                         'estoque' => $this->request->getPost('estoque'),
-                        'promocao' =>  0,
+                        'idPromocao' =>  0,
                         'precoPromocao' =>  0,
                     ];
                     $imagem = $uploadImagem;
@@ -49,7 +49,7 @@ class Produtos extends BaseController
                     'categoria' => $this->request->getPost('categoria'),
                     'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                     'estoque' => $this->request->getPost('estoque'),
-                    'promocao' =>  0,
+                    'idPromocao' =>  0,
                     'precoPromocao' =>  0,
                 ];
                 if ($produtoModel->save($dados)) {
@@ -69,7 +69,7 @@ class Produtos extends BaseController
                 'descricaoProduto' => $this->request->getPost('descricaoProduto'),
                 'imagem' => $uploadImagem,
                 'estoque' => $this->request->getPost('estoque'),
-                'promocao' =>  0,
+                'idPromocao' =>  0,
                 'precoPromocao' =>  0,
             ];
 
@@ -130,7 +130,7 @@ class Produtos extends BaseController
             'categoria' => $dados['dado']['categoria'],
             'estoque' => $dados['dado']['estoque'],
             'descricaoProduto' => $dados['dado']['descricaoProduto'],
-            'promocao' => $dados['dado']['promocao'],
+            'idPromocao' => $dados['dado']['idPromocao'],
             'imagem' => $dados['dado']['imagem'],
         ];
 

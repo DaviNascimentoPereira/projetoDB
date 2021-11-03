@@ -48,6 +48,7 @@ $routes->match(['get','post'],'/editarPromocao/(:num)', 'Promocao::editarPromoca
 $routes->match(['get','post'],'/excluirPromocao/(:num)', 'Promocao::deletePromocao');
 $routes->match(['get','post'],'/promocaoProdutos/(:num)', 'Promocao::promocaoProdutos');
 $routes->match(['get','post'],'/editarProdutoPromocao/(:num)', 'Promocao::editarProdutoPromocao');
+$routes->match(['get','post'],'/removeProduto/(:num)', 'Promocao::removePromocao');
 
 
 $routes->match(['get','post'],'/login', 'Login::index');
