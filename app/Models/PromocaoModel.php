@@ -44,4 +44,13 @@ class PromocaoModel extends Model
         $produtosSelecionados = $this->db->query($produtosEmPromocao);
         return $produtosSelecionados ->getResultArray();
     }
+
+    public function IrPromocoes($promocao = null)
+    {
+        $produtoPromocao = "SELECT * FROM cad_produtos WHERE promocao = " .$promocao;
+        
+        $produtosSelecionados = $this->db->query($produtoPromocao);
+        return $produtosSelecionados ->getResultArray();
+    }
+
 }
