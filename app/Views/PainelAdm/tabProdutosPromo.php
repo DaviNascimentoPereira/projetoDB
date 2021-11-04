@@ -12,7 +12,7 @@
               
                     <h2>Produtos referente a promoção: <?php echo $idPromocao['nomePromocao'] ?></h2>
                   
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">ID produto</th>
@@ -44,7 +44,7 @@
 
                     <h2>Adicionar produtos</h2>
 
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">ID produto</th>
